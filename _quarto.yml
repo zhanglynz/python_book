@@ -1,0 +1,77 @@
+# _quarto.yml
+
+project:
+  type: book
+  output-dir: _book # Optional: Specifies where the rendered book will be saved
+
+book:
+  # --- Book Metadata ---
+  title: "My Learning Python Log" # Replace with your book title
+  author: "Lingyun Zhang"             # Replace with your name(s)
+  date: "today"                   # Automatically uses the render date
+  # date-format: "YYYY-MM-DD"     # Optional: Specify date format if needed
+  # cover-image: cover.png        # Optional: Add a cover image file
+  # description: "A short description of the book." # Optional
+  # site-url: https://your-book-url.com # Optional: If deploying online
+
+  # --- Book Structure ---
+  chapters:
+    # --- Front Matter ---
+    - index.qmd          # Typically the book's landing page/preface
+
+    # --- Part I ---
+    - part: "Part I Basics" # Defines the start of Part I
+      # List the chapter .qmd files for Part I below
+      chapters: 
+        - ch2.ipynb
+        - ch3.ipynb
+        - ch4.ipynb
+        - ch5.ipynb
+        - ch6.ipynb
+        - ch7.ipynb
+        - ch8.ipynb
+        - ch9.ipynb
+        - ch10.ipynb
+        - ch11.ipynb
+    # Add more chapters for Part I as needed
+
+    # --- Part II ---
+    - part: "Part II Examples" # Defines the start of Part II
+      # List the chapter .qmd files for Part II below
+    #- chapter3_simple_example.qmd
+    #- chapter4_complex_example.qmd
+    # Add more chapters for Part II as needed
+
+    # --- Part III ---
+    - part: "Part III Tips"    # Defines the start of Part III
+      # List the chapter .qmd files for Part III below
+    #- chapter5_common_tips.qmd
+    #- chapter6_advanced_tips.qmd
+    # Add more chapters for Part III as needed
+
+    # --- Appendices / Back Matter ---
+    #- summary.qmd        # Optional: A concluding chapter
+    #- references.qmd     # Optional: Often auto-generated if using bibliography
+
+# --- Bibliography (Optional) ---
+# bibliography: references.bib # Specify your BibTeX file if using citations
+# csl: style.csl             # Optional: Specify a citation style language file
+
+# --- Formatting Options (Optional) ---
+format:
+  html:
+    theme: cosmo         # Example theme, choose others like: litera, minty, yeti, etc.
+    # css: styles.css      # Link to a custom CSS file
+    toc: true            # Show table of contents
+    toc-depth: 3         # Depth of ToC levels
+  # pdf:                 # Example PDF output settings
+    # documentclass: scrreprt
+    # CJKoptions:          # Example for CJK languages if needed
+      # - "overlap"
+      # - "allowbreak"
+    # Keep-tex: true       # Keep the intermediate LaTeX file for debugging
+
+# --- Editor (Optional) ---
+# editor: visual # Or 'source' depending on your preference
+
+

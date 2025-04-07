@@ -1,0 +1,10 @@
+# Preface {.unnumbered}
+
+This book has three parts:
+
+1. Basics
+1. Examples in 
+    - scentific computing area
+    - text mining area
+    - other areas
+1. Tips

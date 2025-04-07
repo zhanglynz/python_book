@@ -1,0 +1,8 @@
+project:
+  type: book
+
+book:
+  title: "Your Book Title"
+  author: "Your Name"
+  chapters:
+    - ch1.qmd
