@@ -1,10 +1,23 @@
 # Preface {.unnumbered}
 
+**The why, what and how questions.** I wanted to learn Python. As with many things I do, I first asked myself the following questions:
+
+- Why learn Python?
+- What should I learn?
+- How should I learn it?
+
+Among these three, I think the easiest question to answer was the third one. My answer: by reading the books [*Python for Everybody*](https://www.py4e.com/book) and [*Think Python*](https://allendowney.github.io/ThinkPython/). While reading, I took notes and completed some exercises.
+
+As for the *why* question, I had a vague answer: Python is a general-purpose language, and it's useful.
+
+For the *what* question, my answer was that I want to use python in the **numerical computing**, **text mining** and other areas.
+
+
 This book has three parts:
 
 1. Basics
 1. Examples in 
-    - scentific computing area
-    - text mining area
-    - other areas
+    - numerical computing 
+    - text mining 
+    - other 
 1. Tips

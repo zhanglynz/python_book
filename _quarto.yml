@@ -6,7 +6,7 @@ project:
 
 book:
   # --- Book Metadata ---
-  title: "My Learning Python Log" # Replace with your book title
+  title: "My Learning Python Notes" # Replace with your book title
   author: "Lingyun Zhang"             # Replace with your name(s)
   date: "today"                   # Automatically uses the render date
   # date-format: "YYYY-MM-DD"     # Optional: Specify date format if needed
@@ -23,7 +23,7 @@ book:
     - part: "Part I Basics" # Defines the start of Part I
       # List the chapter .qmd files for Part I below
       chapters: 
-        - ch2.ipynb
+        - summaryBook.ipynb
         - ch3.ipynb
         - ch4.ipynb
         - ch5.ipynb
