@@ -2,7 +2,7 @@
 
 project:
   type: book
-  output-dir: _book # Optional: Specifies where the rendered book will be saved
+  output-dir: docs # Optional: Specifies where the rendered book will be saved
 
 book:
   # --- Book Metadata ---
