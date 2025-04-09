@@ -24,13 +24,6 @@ book:
       # List the chapter .qmd files for Part I below
       chapters: 
         - summaryBook.ipynb
-        - ch3.ipynb
-        - ch4.ipynb
-        - ch5.ipynb
-        - ch6.ipynb
-        - ch7.ipynb
-        - ch8.ipynb
-        - ch9.ipynb
         - ch10.ipynb
         - ch11.ipynb
     # Add more chapters for Part I as needed
