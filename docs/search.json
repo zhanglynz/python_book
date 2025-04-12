@@ -68,34 +68,34 @@
   {
     "objectID": "numerical_computing.html",
     "href": "numerical_computing.html",
-    "title": "4  Numerical Computing",
+    "title": "5  Numerical Computing",
     "section": "",
-    "text": "4.1 Find number of digits\nProblem: Write a function, where the input is an integer number and the output is the number of digits of this number.\n# Method 1\n\nfrom math import log, floor\ndef find_nbr_of_digits_1(an_int) :\n    try:\n        return floor(log(an_int, 10)) + 1\n    except :\n        return 1    \n\n## test\nprint(find_nbr_of_digits_1(12345))\nprint(find_nbr_of_digits_1(2 ** 10))\nprint(find_nbr_of_digits_1(0))\n\n5\n4\n1\n# Method 2\n\ndef find_nbr_of_digits_2(an_int) :\n    c = 0\n    while True :\n        an_int = an_int // 10\n        c = c + 1\n        if an_int == 0 :\n            break\n    return c\n\n## test\nprint(find_nbr_of_digits_2(12345))\nprint(find_nbr_of_digits_2(2 ** 10)) \nprint(find_nbr_of_digits_2(0))   \n\n5\n4\n1",
+    "text": "5.1 Find number of digits\nProblem: Write a function, where the input is an integer number and the output is the number of digits of this number.\n# Method 1\n\nfrom math import log, floor\ndef find_nbr_of_digits_1(an_int) :\n    try:\n        return floor(log(an_int, 10)) + 1\n    except :\n        return 1    \n\n## test\nprint(find_nbr_of_digits_1(12345))\nprint(find_nbr_of_digits_1(2 ** 10))\nprint(find_nbr_of_digits_1(0))\n\n5\n4\n1\n# Method 2\n\ndef find_nbr_of_digits_2(an_int) :\n    c = 0\n    while True :\n        an_int = an_int // 10\n        c = c + 1\n        if an_int == 0 :\n            break\n    return c\n\n## test\nprint(find_nbr_of_digits_2(12345))\nprint(find_nbr_of_digits_2(2 ** 10)) \nprint(find_nbr_of_digits_2(0))   \n\n5\n4\n1",
     "crumbs": [
       "Part II Examples",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Numerical Computing</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Numerical Computing</span>"
     ]
   },
   {
     "objectID": "numerical_computing.html#the-first-fibonacci-number-greater-than-m",
     "href": "numerical_computing.html#the-first-fibonacci-number-greater-than-m",
-    "title": "4  Numerical Computing",
-    "section": "4.2 The first Fibonacci number greater than m",
-    "text": "4.2 The first Fibonacci number greater than m\nProblem: Let F_n be the n-th Fibonacci number. Find n, such that F_n &gt;= m, where m &gt;= 1.\n\ndef find_fibo_index(m) :\n    f1 = 1\n    f2 = 1\n    i = 2\n    if m == 1 :\n        return 1\n    else:\n        while True:\n            f = f1 + f2\n            i = i + 1\n            if f &gt;= m :\n                break\n            f1 = f2\n            f2 = f\n        return i\n\n## test\nprint(find_fibo_index(10000))\nprint(find_fibo_index(1))\n\n21\n1",
+    "title": "5  Numerical Computing",
+    "section": "5.2 The first Fibonacci number greater than m",
+    "text": "5.2 The first Fibonacci number greater than m\nProblem: Let F_n be the n-th Fibonacci number. Find n, such that F_n &gt;= m, where m &gt;= 1.\n\ndef find_fibo_index(m) :\n    f1 = 1\n    f2 = 1\n    i = 2\n    if m == 1 :\n        return 1\n    else:\n        while True:\n            f = f1 + f2\n            i = i + 1\n            if f &gt;= m :\n                break\n            f1 = f2\n            f2 = f\n        return i\n\n## test\nprint(find_fibo_index(10000))\nprint(find_fibo_index(1))\n\n21\n1",
     "crumbs": [
       "Part II Examples",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Numerical Computing</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Numerical Computing</span>"
     ]
   },
   {
     "objectID": "numerical_computing.html#long-division",
     "href": "numerical_computing.html#long-division",
-    "title": "4  Numerical Computing",
-    "section": "4.3 Long division",
-    "text": "4.3 Long division\nProblem: Find n / d, where both n and d are integers but d cannot be 0.\n\ndef long_div(n, d) :\n    q_list = list()\n    r_list = list()\n    # initial\n    q = n // d\n    r = n % d\n    q_list.append(q)\n    r_list.append(r)\n    if r == 0 :\n        return [[q, r], ['No repeat']]\n    else :\n        c = 0\n        while True :\n            n = 10 * r\n            q = n // d\n            r = n % d\n            q_list.append(q)\n            r_list.append(r)\n            c = c + 1\n            if (r in r_list[:c]) or r == 0 :\n                break\n        if r_list[-1] == 0 :\n            the_re = [q_list, ['No repeat']]\n        else :\n            m = len(r_list)\n            for i in range(m - 1) :\n                if r_list[i] == r_list[-1] :\n                    the_re = [q_list, {\"Repeat starts position\": i + 2}] \n                    break\n        return the_re\n\n## test\nprint(long_div(1, 2))\nprint(long_div(1, 3))\nprint(long_div(1, 6))\nprint(long_div(1, 7))\nprint(long_div(20, 2))\nprint(long_div(20, 3))\nprint(long_div(20, 6))\nprint(long_div(20, 7))\nprint(long_div(199, 23))\n\n[[0, 5], ['No repeat']]\n[[0, 3], {'Repeat starts position': 2}]\n[[0, 1, 6], {'Repeat starts position': 3}]\n[[0, 1, 4, 2, 8, 5, 7], {'Repeat starts position': 2}]\n[[10, 0], ['No repeat']]\n[[6, 6], {'Repeat starts position': 2}]\n[[3, 3], {'Repeat starts position': 2}]\n[[2, 8, 5, 7, 1, 4, 2], {'Repeat starts position': 2}]\n[[8, 6, 5, 2, 1, 7, 3, 9, 1, 3, 0, 4, 3, 4, 7, 8, 2, 6, 0, 8, 6, 9, 5], {'Repeat starts position': 2}]",
+    "title": "5  Numerical Computing",
+    "section": "5.3 Long division",
+    "text": "5.3 Long division\nProblem: Find n / d, where both n and d are integers but d cannot be 0.\n\ndef long_div(n, d) :\n    q_list = list()\n    r_list = list()\n    # initial\n    q = n // d\n    r = n % d\n    q_list.append(q)\n    r_list.append(r)\n    if r == 0 :\n        return [[q, r], ['No repeat']]\n    else :\n        c = 0\n        while True :\n            n = 10 * r\n            q = n // d\n            r = n % d\n            q_list.append(q)\n            r_list.append(r)\n            c = c + 1\n            if (r in r_list[:c]) or r == 0 :\n                break\n        if r_list[-1] == 0 :\n            the_re = [q_list, ['No repeat']]\n        else :\n            m = len(r_list)\n            for i in range(m - 1) :\n                if r_list[i] == r_list[-1] :\n                    the_re = [q_list, {\"Repeat starts position\": i + 2}] \n                    break\n        return the_re\n\n## test\nprint(long_div(1, 2))\nprint(long_div(1, 3))\nprint(long_div(1, 6))\nprint(long_div(1, 7))\nprint(long_div(20, 2))\nprint(long_div(20, 3))\nprint(long_div(20, 6))\nprint(long_div(20, 7))\nprint(long_div(199, 23))\n\n[[0, 5], ['No repeat']]\n[[0, 3], {'Repeat starts position': 2}]\n[[0, 1, 6], {'Repeat starts position': 3}]\n[[0, 1, 4, 2, 8, 5, 7], {'Repeat starts position': 2}]\n[[10, 0], ['No repeat']]\n[[6, 6], {'Repeat starts position': 2}]\n[[3, 3], {'Repeat starts position': 2}]\n[[2, 8, 5, 7, 1, 4, 2], {'Repeat starts position': 2}]\n[[8, 6, 5, 2, 1, 7, 3, 9, 1, 3, 0, 4, 3, 4, 7, 8, 2, 6, 0, 8, 6, 9, 5], {'Repeat starts position': 2}]",
     "crumbs": [
       "Part II Examples",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Numerical Computing</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Numerical Computing</span>"
     ]
   },
   {
@@ -128,6 +128,226 @@
     "text": "Preface\nThe why, what and how questions. I wanted to learn Python. As with many things I do, I first asked myself the following questions:\n\nWhy learn Python?\nWhat should I learn?\nHow should I learn it?\n\nAmong these three, I think the easiest question to answer was the third one. My answer: by reading the books Python for Everybody and Think Python. While reading, I took notes and completed some exercises.\nAs for the why question, I had a vague answer: Python is a general-purpose language, and it’s useful.\nFor the what question, my answer was that I want to use python in the numerical computing, text mining and other areas.\nThis book has three parts:\n\nBasics\nExamples in\n\nnumerical computing\ntext mining\nother\n\nTips",
     "crumbs": [
       "Preface"
+    ]
+  },
+  {
+    "objectID": "python_packages.html",
+    "href": "python_packages.html",
+    "title": "4  Most useful Python packages: ChatGPT’s answer",
+    "section": "",
+    "text": "4.1 General-Purpose Utilities",
+    "crumbs": [
+      "Part I Basics",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Most useful Python packages: ChatGPT's answer</span>"
+    ]
+  },
+  {
+    "objectID": "python_packages.html#general-purpose-utilities",
+    "href": "python_packages.html#general-purpose-utilities",
+    "title": "4  Most useful Python packages: ChatGPT’s answer",
+    "section": "",
+    "text": "numpy – Fast numerical computing with arrays.\npandas – Data manipulation and analysis.\nmatplotlib – Basic plotting and visualization.\nseaborn – Advanced statistical visualizations.\nscipy – Scientific computing (optimization, integration, etc.).",
+    "crumbs": [
+      "Part I Basics",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Most useful Python packages: ChatGPT's answer</span>"
+    ]
+  },
+  {
+    "objectID": "python_packages.html#machine-learning-ai",
+    "href": "python_packages.html#machine-learning-ai",
+    "title": "4  Most useful Python packages: ChatGPT’s answer",
+    "section": "4.2 Machine Learning & AI",
+    "text": "4.2 Machine Learning & AI\n\nscikit-learn – Classic machine learning models.\ntensorflow – Deep learning.\ntorch – PyTorch, an alternative to TensorFlow.\nxgboost – Gradient boosting (for structured data).\nhuggingface/transformers – NLP and large language models.",
+    "crumbs": [
+      "Part I Basics",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Most useful Python packages: ChatGPT's answer</span>"
+    ]
+  },
+  {
+    "objectID": "python_packages.html#data-science-statistics",
+    "href": "python_packages.html#data-science-statistics",
+    "title": "4  Most useful Python packages: ChatGPT’s answer",
+    "section": "4.3 Data Science & Statistics",
+    "text": "4.3 Data Science & Statistics\n\nstatsmodels – Statistical models (regression, time series).\nsympy – Symbolic mathematics.\nnetworkx – Graphs and network analysis.",
+    "crumbs": [
+      "Part I Basics",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Most useful Python packages: ChatGPT's answer</span>"
+    ]
+  },
+  {
+    "objectID": "python_packages.html#web-scraping-automation",
+    "href": "python_packages.html#web-scraping-automation",
+    "title": "4  Most useful Python packages: ChatGPT’s answer",
+    "section": "4.4 Web Scraping & Automation",
+    "text": "4.4 Web Scraping & Automation\n\nrequests – HTTP requests.\nbeautifulsoup4 – Web scraping.\nselenium – Automating browsers.\nscrapy – Advanced web scraping framework",
+    "crumbs": [
+      "Part I Basics",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Most useful Python packages: ChatGPT's answer</span>"
+    ]
+  },
+  {
+    "objectID": "python_packages.html#data-visualization-dashboards",
+    "href": "python_packages.html#data-visualization-dashboards",
+    "title": "4  Most useful Python packages: ChatGPT’s answer",
+    "section": "4.5 Data Visualization & Dashboards",
+    "text": "4.5 Data Visualization & Dashboards\n\nplotly – Interactive plots.\nbokeh – Web-based visualizations.\naltair – Declarative statistical visualization.\ndash – Web apps for data visualization.",
+    "crumbs": [
+      "Part I Basics",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Most useful Python packages: ChatGPT's answer</span>"
+    ]
+  },
+  {
+    "objectID": "python_packages.html#web-development-apis",
+    "href": "python_packages.html#web-development-apis",
+    "title": "4  Most useful Python packages: ChatGPT’s answer",
+    "section": "4.6 Web Development & APIs",
+    "text": "4.6 Web Development & APIs\n\nflask – Lightweight web framework.\nfastapi – Fast APIs with automatic documentation.\ndjango – Full-featured web framework.",
+    "crumbs": [
+      "Part I Basics",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Most useful Python packages: ChatGPT's answer</span>"
+    ]
+  },
+  {
+    "objectID": "python_packages.html#file-handling-system-tasks",
+    "href": "python_packages.html#file-handling-system-tasks",
+    "title": "4  Most useful Python packages: ChatGPT’s answer",
+    "section": "4.7 File Handling & System Tasks",
+    "text": "4.7 File Handling & System Tasks\n\nos – Interacting with the operating system.\nshutil – File operations.\npathlib – Modern file path handling.\npillow – Image processing.",
+    "crumbs": [
+      "Part I Basics",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Most useful Python packages: ChatGPT's answer</span>"
+    ]
+  },
+  {
+    "objectID": "python_packages.html#performance-parallel-computing",
+    "href": "python_packages.html#performance-parallel-computing",
+    "title": "4  Most useful Python packages: ChatGPT’s answer",
+    "section": "4.8 Performance & Parallel Computing",
+    "text": "4.8 Performance & Parallel Computing\n\nnumba – JIT compilation for speed.\nmultiprocessing – Parallel computing.\njoblib – Parallelization made easy.",
+    "crumbs": [
+      "Part I Basics",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Most useful Python packages: ChatGPT's answer</span>"
+    ]
+  },
+  {
+    "objectID": "python_packages.html#security-cryptography",
+    "href": "python_packages.html#security-cryptography",
+    "title": "4  Most useful Python packages: ChatGPT’s answer",
+    "section": "4.9 Security & Cryptography",
+    "text": "4.9 Security & Cryptography\n\ncryptography – Encryption and security.\nhashlib – Hashing algorithms.",
+    "crumbs": [
+      "Part I Basics",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Most useful Python packages: ChatGPT's answer</span>"
+    ]
+  },
+  {
+    "objectID": "python_packages.html#bonus-ai-chatbots",
+    "href": "python_packages.html#bonus-ai-chatbots",
+    "title": "4  Most useful Python packages: ChatGPT’s answer",
+    "section": "4.10 Bonus: AI & Chatbots",
+    "text": "4.10 Bonus: AI & Chatbots\n\nopenai – OpenAI’s API for ChatGPT and other models.\nlangchain – Building AI-powered applications.",
+    "crumbs": [
+      "Part I Basics",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Most useful Python packages: ChatGPT's answer</span>"
+    ]
+  },
+  {
+    "objectID": "python_packages.html#how-to-install-a-package",
+    "href": "python_packages.html#how-to-install-a-package",
+    "title": "4  Most useful Python packages: ChatGPT’s answer",
+    "section": "4.11 How to install a package",
+    "text": "4.11 How to install a package\npip install package_name",
+    "crumbs": [
+      "Part I Basics",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Most useful Python packages: ChatGPT's answer</span>"
+    ]
+  },
+  {
+    "objectID": "python_packages.html#how-to-check-a-package-is-available",
+    "href": "python_packages.html#how-to-check-a-package-is-available",
+    "title": "4  Most useful Python packages: ChatGPT’s answer",
+    "section": "4.12 How to check a package is available",
+    "text": "4.12 How to check a package is available\npip show package_name",
+    "crumbs": [
+      "Part I Basics",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Most useful Python packages: ChatGPT's answer</span>"
+    ]
+  },
+  {
+    "objectID": "python_packages.html#how-to-show-all-installed-packages",
+    "href": "python_packages.html#how-to-show-all-installed-packages",
+    "title": "4  Most useful Python packages: ChatGPT’s answer",
+    "section": "4.13 How to show all installed packages",
+    "text": "4.13 How to show all installed packages\npip list",
+    "crumbs": [
+      "Part I Basics",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Most useful Python packages: ChatGPT's answer</span>"
+    ]
+  },
+  {
+    "objectID": "deepseek_python_pkgs.html",
+    "href": "deepseek_python_pkgs.html",
+    "title": "5  Most useful Python package: Deep Seek’s answer",
+    "section": "",
+    "text": "5.1 General Utilities\nNumPy: Essential for numerical computing, offering support for arrays, matrices, and mathematical functions.\nPandas: A powerful library for data manipulation and analysis, especially with tabular data (DataFrames).\nMatplotlib: A versatile library for creating static, animated, and interactive visualizations.\nSeaborn: Built on top of Matplotlib, it provides a high-level interface for creating attractive statistical graphics.\nRequests: Simplifies making HTTP requests, commonly used for interacting with APIs.\ntqdm: Adds progress bars to loops and iterables, making it easier to track progress.",
+    "crumbs": [
+      "Part I Basics",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Most useful Python package: Deep Seek's answer</span>"
+    ]
+  },
+  {
+    "objectID": "deepseek_python_pkgs.html#data-science-machine-learning",
+    "href": "deepseek_python_pkgs.html#data-science-machine-learning",
+    "title": "5  Most useful Python package: Deep Seek’s answer",
+    "section": "5.2 Data Science & Machine Learning",
+    "text": "5.2 Data Science & Machine Learning\nScikit-learn: A comprehensive library for machine learning, including tools for classification, regression, clustering, and more.\nTensorFlow and PyTorch: Leading libraries for deep learning and neural networks.\nKeras: A high-level API for building and training neural networks, often used with TensorFlow.\nXGBoost, LightGBM, and CatBoost: Optimized libraries for gradient boosting algorithms.\nStatsmodels: Provides tools for statistical modeling and hypothesis testing.\nOpenCV: A library for computer vision tasks like image and video processing.",
+    "crumbs": [
+      "Part I Basics",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Most useful Python package: Deep Seek's answer</span>"
+    ]
+  },
+  {
+    "objectID": "deepseek_python_pkgs.html#web-development",
+    "href": "deepseek_python_pkgs.html#web-development",
+    "title": "5  Most useful Python package: Deep Seek’s answer",
+    "section": "5.3 Web Development",
+    "text": "5.3 Web Development\nFlask: A lightweight framework for building web applications.\nDjango: A full-stack web framework with built-in features for database management, authentication, and more.\nFastAPI: A modern framework for building APIs with high performance and automatic documentation.\nBeautifulSoup and Scrapy: Libraries for web scraping and parsing HTML/XML.\nSQLAlchemy: A toolkit and ORM (Object-Relational Mapping) for working with databases.",
+    "crumbs": [
+      "Part I Basics",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Most useful Python package: Deep Seek's answer</span>"
+    ]
+  },
+  {
+    "objectID": "deepseek_python_pkgs.html#automation-scripting",
+    "href": "deepseek_python_pkgs.html#automation-scripting",
+    "title": "5  Most useful Python package: Deep Seek’s answer",
+    "section": "5.4 Automation & Scripting",
+    "text": "5.4 Automation & Scripting\nos and shutil: Built-in modules for interacting with the operating system and file management.\nsubprocess: Allows you to spawn new processes and interact with them.\nargparse: Simplifies creating command-line interfaces.\nSchedule: A lightweight library for scheduling tasks.\nPyAutoGUI: Automates GUI interactions, such as mouse and keyboard control.",
+    "crumbs": [
+      "Part I Basics",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Most useful Python package: Deep Seek's answer</span>"
+    ]
+  },
+  {
+    "objectID": "deepseek_python_pkgs.html#data-visualization",
+    "href": "deepseek_python_pkgs.html#data-visualization",
+    "title": "5  Most useful Python package: Deep Seek’s answer",
+    "section": "5.5 Data Visualization",
+    "text": "5.5 Data Visualization\nPlotly: A library for creating interactive and publication-quality graphs.\nBokeh: Ideal for creating interactive visualizations for web browsers.\nAltair: A declarative statistical visualization library.\nDash: A framework for building interactive web-based dashboards.",
+    "crumbs": [
+      "Part I Basics",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Most useful Python package: Deep Seek's answer</span>"
+    ]
+  },
+  {
+    "objectID": "deepseek_python_pkgs.html#database-interaction",
+    "href": "deepseek_python_pkgs.html#database-interaction",
+    "title": "5  Most useful Python package: Deep Seek’s answer",
+    "section": "5.6 Database Interaction",
+    "text": "5.6 Database Interaction\npsycopg2: A PostgreSQL adapter for Python.\nSQLite3: A built-in module for working with SQLite databases.\nPyMongo: A library for interacting with MongoDB databases.\nRedis-py: A Python client for Redis, an in-memory data store.\nTesting & Debugging unittest: A built-in framework for unit testing.\npytest: A popular testing framework with simpler syntax and advanced features.\npdb: Python’s built-in debugger.\nlogging: A module for tracking events and debugging.\nNatural Language Processing (NLP) NLTK: A toolkit for working with human language data.\nspaCy: An industrial-strength NLP library for advanced text processing.\nTransformers (by Hugging Face): A library for working with state-of-the-art NLP models like BERT and GPT.\nGensim: A library for topic modeling and document similarity analysis.\nScientific Computing SciPy: Built on NumPy, it provides additional functionality for optimization, integration, and more.\nSymPy: A library for symbolic mathematics.\nAstropy: A library for astronomy and astrophysics.\nCloud & DevOps Boto3: The official AWS SDK for Python, used to interact with AWS services.\nFabric: A library for streamlining SSH and deployment tasks.\nDocker SDK: A Python library for interacting with Docker.\nGame Development Pygame: A library for creating 2D games.\nArcade: A modern alternative to Pygame for game development.\nOther Notable Packages Jupyter: An interactive notebook environment for data analysis and visualization.\nPoetry: A tool for dependency management and packaging.\nBlack: A code formatter for consistent code styling.\nFlake8: A tool for linting and enforcing code quality.\nPillow: A library for image processing and manipulation.",
+    "crumbs": [
+      "Part I Basics",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Most useful Python package: Deep Seek's answer</span>"
     ]
   }
 ]

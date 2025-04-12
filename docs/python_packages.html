@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>5&nbsp; Numerical Computing – My Learning Python Notes</title>
+<title>4&nbsp; Most useful Python packages: ChatGPT’s answer – My Learning Python Notes</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,40 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -64,8 +30,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./string_tips.html" rel="next">
-<link href="./python_packages.html" rel="prev">
+<link href="./deepseek_python_pkgs.html" rel="next">
+<link href="./regular_expression_table.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -115,7 +81,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./numerical_computing.html">Part II Examples</a></li><li class="breadcrumb-item"><a href="./numerical_computing.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Numerical Computing</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./summaryBook.html">Part I Basics</a></li><li class="breadcrumb-item"><a href="./python_packages.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Most useful Python packages: ChatGPT’s answer</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -175,8 +141,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./python_packages.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">List of most useful Python package</span></span></a>
+  <a href="./python_packages.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Most useful Python packages: ChatGPT’s answer</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./deepseek_python_pkgs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Most useful Python package: Deep Seek’s answer</span></span></a>
   </div>
 </li>
       </ul>
@@ -192,8 +164,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./numerical_computing.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Numerical Computing</span></span></a>
+  <a href="./numerical_computing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Numerical Computing</span></span></a>
   </div>
 </li>
       </ul>
@@ -210,7 +182,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./string_tips.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">String Tips</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">String Tips</span></span></a>
   </div>
 </li>
       </ul>
@@ -225,18 +197,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#find-number-of-digits" id="toc-find-number-of-digits" class="nav-link active" data-scroll-target="#find-number-of-digits"><span class="header-section-number">5.1</span> Find number of digits</a></li>
-  <li><a href="#the-first-fibonacci-number-greater-than-m" id="toc-the-first-fibonacci-number-greater-than-m" class="nav-link" data-scroll-target="#the-first-fibonacci-number-greater-than-m"><span class="header-section-number">5.2</span> The first Fibonacci number greater than m</a></li>
-  <li><a href="#long-division" id="toc-long-division" class="nav-link" data-scroll-target="#long-division"><span class="header-section-number">5.3</span> Long division</a></li>
+  <li><a href="#general-purpose-utilities" id="toc-general-purpose-utilities" class="nav-link active" data-scroll-target="#general-purpose-utilities"><span class="header-section-number">4.1</span> General-Purpose Utilities</a></li>
+  <li><a href="#machine-learning-ai" id="toc-machine-learning-ai" class="nav-link" data-scroll-target="#machine-learning-ai"><span class="header-section-number">4.2</span> Machine Learning &amp; AI</a></li>
+  <li><a href="#data-science-statistics" id="toc-data-science-statistics" class="nav-link" data-scroll-target="#data-science-statistics"><span class="header-section-number">4.3</span> Data Science &amp; Statistics</a></li>
+  <li><a href="#web-scraping-automation" id="toc-web-scraping-automation" class="nav-link" data-scroll-target="#web-scraping-automation"><span class="header-section-number">4.4</span> Web Scraping &amp; Automation</a></li>
+  <li><a href="#data-visualization-dashboards" id="toc-data-visualization-dashboards" class="nav-link" data-scroll-target="#data-visualization-dashboards"><span class="header-section-number">4.5</span> Data Visualization &amp; Dashboards</a></li>
+  <li><a href="#web-development-apis" id="toc-web-development-apis" class="nav-link" data-scroll-target="#web-development-apis"><span class="header-section-number">4.6</span> Web Development &amp; APIs</a></li>
+  <li><a href="#file-handling-system-tasks" id="toc-file-handling-system-tasks" class="nav-link" data-scroll-target="#file-handling-system-tasks"><span class="header-section-number">4.7</span> File Handling &amp; System Tasks</a></li>
+  <li><a href="#performance-parallel-computing" id="toc-performance-parallel-computing" class="nav-link" data-scroll-target="#performance-parallel-computing"><span class="header-section-number">4.8</span> Performance &amp; Parallel Computing</a></li>
+  <li><a href="#security-cryptography" id="toc-security-cryptography" class="nav-link" data-scroll-target="#security-cryptography"><span class="header-section-number">4.9</span> Security &amp; Cryptography</a></li>
+  <li><a href="#bonus-ai-chatbots" id="toc-bonus-ai-chatbots" class="nav-link" data-scroll-target="#bonus-ai-chatbots"><span class="header-section-number">4.10</span> Bonus: AI &amp; Chatbots</a></li>
+  <li><a href="#how-to-install-a-package" id="toc-how-to-install-a-package" class="nav-link" data-scroll-target="#how-to-install-a-package"><span class="header-section-number">4.11</span> How to install a package</a></li>
+  <li><a href="#how-to-check-a-package-is-available" id="toc-how-to-check-a-package-is-available" class="nav-link" data-scroll-target="#how-to-check-a-package-is-available"><span class="header-section-number">4.12</span> How to check a package is available</a></li>
+  <li><a href="#how-to-show-all-installed-packages" id="toc-how-to-show-all-installed-packages" class="nav-link" data-scroll-target="#how-to-show-all-installed-packages"><span class="header-section-number">4.13</span> How to show all installed packages</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./numerical_computing.html">Part II Examples</a></li><li class="breadcrumb-item"><a href="./numerical_computing.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Numerical Computing</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./summaryBook.html">Part I Basics</a></li><li class="breadcrumb-item"><a href="./python_packages.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Most useful Python packages: ChatGPT’s answer</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Numerical Computing</span></h1>
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Most useful Python packages: ChatGPT’s answer</span></h1>
 </div>
 
 
@@ -253,138 +235,103 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="find-number-of-digits" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="find-number-of-digits"><span class="header-section-number">5.1</span> Find number of digits</h2>
-<p><strong>Problem:</strong> Write a function, where the input is an integer number and the output is the number of digits of this number.</p>
-<div id="cell-1" class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Method 1</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> math <span class="im">import</span> log, floor</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> find_nbr_of_digits_1(an_int) :</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> floor(log(an_int, <span class="dv">10</span>)) <span class="op">+</span> <span class="dv">1</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span> :</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">1</span>    </span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co">## test</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(find_nbr_of_digits_1(<span class="dv">12345</span>))</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(find_nbr_of_digits_1(<span class="dv">2</span> <span class="op">**</span> <span class="dv">10</span>))</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(find_nbr_of_digits_1(<span class="dv">0</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>5
-4
-1</code></pre>
-</div>
-</div>
-<div id="cell-2" class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Method 2</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> find_nbr_of_digits_2(an_int) :</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    c <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> <span class="va">True</span> :</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>        an_int <span class="op">=</span> an_int <span class="op">//</span> <span class="dv">10</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>        c <span class="op">=</span> c <span class="op">+</span> <span class="dv">1</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> an_int <span class="op">==</span> <span class="dv">0</span> :</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>            <span class="cf">break</span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> c</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="co">## test</span></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(find_nbr_of_digits_2(<span class="dv">12345</span>))</span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(find_nbr_of_digits_2(<span class="dv">2</span> <span class="op">**</span> <span class="dv">10</span>)) </span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(find_nbr_of_digits_2(<span class="dv">0</span>))   </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>5
-4
-1</code></pre>
-</div>
-</div>
+<p>NB: The following content is from ChatGPT.</p>
+<section id="general-purpose-utilities" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="general-purpose-utilities"><span class="header-section-number">4.1</span> General-Purpose Utilities</h2>
+<ul>
+<li>numpy – Fast numerical computing with arrays.</li>
+<li>pandas – Data manipulation and analysis.</li>
+<li>matplotlib – Basic plotting and visualization.</li>
+<li>seaborn – Advanced statistical visualizations.</li>
+<li>scipy – Scientific computing (optimization, integration, etc.).</li>
+</ul>
 </section>
-<section id="the-first-fibonacci-number-greater-than-m" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="the-first-fibonacci-number-greater-than-m"><span class="header-section-number">5.2</span> The first Fibonacci number greater than m</h2>
-<p><strong>Problem:</strong> Let F_n be the n-th Fibonacci number. Find n, such that F_n &gt;= m, where m &gt;= 1.</p>
-<div id="cell-4" class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> find_fibo_index(m) :</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    f1 <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    f2 <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    i <span class="op">=</span> <span class="dv">2</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> m <span class="op">==</span> <span class="dv">1</span> :</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">1</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">while</span> <span class="va">True</span>:</span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>            f <span class="op">=</span> f1 <span class="op">+</span> f2</span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>            i <span class="op">=</span> i <span class="op">+</span> <span class="dv">1</span></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> f <span class="op">&gt;=</span> m :</span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>                <span class="cf">break</span></span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>            f1 <span class="op">=</span> f2</span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>            f2 <span class="op">=</span> f</span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> i</span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="co">## test</span></span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(find_fibo_index(<span class="dv">10000</span>))</span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(find_fibo_index(<span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>21
-1</code></pre>
-</div>
-</div>
+<section id="machine-learning-ai" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="machine-learning-ai"><span class="header-section-number">4.2</span> Machine Learning &amp; AI</h2>
+<ul>
+<li>scikit-learn – Classic machine learning models.</li>
+<li>tensorflow – Deep learning.</li>
+<li>torch – PyTorch, an alternative to TensorFlow.</li>
+<li>xgboost – Gradient boosting (for structured data).</li>
+<li>huggingface/transformers – NLP and large language models.</li>
+</ul>
 </section>
-<section id="long-division" class="level2" data-number="5.3">
-<h2 data-number="5.3" class="anchored" data-anchor-id="long-division"><span class="header-section-number">5.3</span> Long division</h2>
-<p><strong>Problem:</strong> Find n / d, where both n and d are integers but d cannot be 0.</p>
-<div id="cell-6" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> long_div(n, d) :</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    q_list <span class="op">=</span> <span class="bu">list</span>()</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    r_list <span class="op">=</span> <span class="bu">list</span>()</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># initial</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    q <span class="op">=</span> n <span class="op">//</span> d</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    r <span class="op">=</span> n <span class="op">%</span> d</span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    q_list.append(q)</span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    r_list.append(r)</span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> r <span class="op">==</span> <span class="dv">0</span> :</span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> [[q, r], [<span class="st">'No repeat'</span>]]</span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span> :</span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>        c <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">while</span> <span class="va">True</span> :</span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>            n <span class="op">=</span> <span class="dv">10</span> <span class="op">*</span> r</span>
-<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>            q <span class="op">=</span> n <span class="op">//</span> d</span>
-<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>            r <span class="op">=</span> n <span class="op">%</span> d</span>
-<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>            q_list.append(q)</span>
-<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>            r_list.append(r)</span>
-<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>            c <span class="op">=</span> c <span class="op">+</span> <span class="dv">1</span></span>
-<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> (r <span class="kw">in</span> r_list[:c]) <span class="kw">or</span> r <span class="op">==</span> <span class="dv">0</span> :</span>
-<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>                <span class="cf">break</span></span>
-<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> r_list[<span class="op">-</span><span class="dv">1</span>] <span class="op">==</span> <span class="dv">0</span> :</span>
-<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>            the_re <span class="op">=</span> [q_list, [<span class="st">'No repeat'</span>]]</span>
-<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span> :</span>
-<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>            m <span class="op">=</span> <span class="bu">len</span>(r_list)</span>
-<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>            <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(m <span class="op">-</span> <span class="dv">1</span>) :</span>
-<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>                <span class="cf">if</span> r_list[i] <span class="op">==</span> r_list[<span class="op">-</span><span class="dv">1</span>] :</span>
-<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>                    the_re <span class="op">=</span> [q_list, {<span class="st">"Repeat starts position"</span>: i <span class="op">+</span> <span class="dv">2</span>}] </span>
-<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a>                    <span class="cf">break</span></span>
-<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> the_re</span>
-<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a><span class="co">## test</span></span>
-<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(long_div(<span class="dv">1</span>, <span class="dv">2</span>))</span>
-<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(long_div(<span class="dv">1</span>, <span class="dv">3</span>))</span>
-<span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(long_div(<span class="dv">1</span>, <span class="dv">6</span>))</span>
-<span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(long_div(<span class="dv">1</span>, <span class="dv">7</span>))</span>
-<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(long_div(<span class="dv">20</span>, <span class="dv">2</span>))</span>
-<span id="cb7-38"><a href="#cb7-38" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(long_div(<span class="dv">20</span>, <span class="dv">3</span>))</span>
-<span id="cb7-39"><a href="#cb7-39" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(long_div(<span class="dv">20</span>, <span class="dv">6</span>))</span>
-<span id="cb7-40"><a href="#cb7-40" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(long_div(<span class="dv">20</span>, <span class="dv">7</span>))</span>
-<span id="cb7-41"><a href="#cb7-41" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(long_div(<span class="dv">199</span>, <span class="dv">23</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[[0, 5], ['No repeat']]
-[[0, 3], {'Repeat starts position': 2}]
-[[0, 1, 6], {'Repeat starts position': 3}]
-[[0, 1, 4, 2, 8, 5, 7], {'Repeat starts position': 2}]
-[[10, 0], ['No repeat']]
-[[6, 6], {'Repeat starts position': 2}]
-[[3, 3], {'Repeat starts position': 2}]
-[[2, 8, 5, 7, 1, 4, 2], {'Repeat starts position': 2}]
-[[8, 6, 5, 2, 1, 7, 3, 9, 1, 3, 0, 4, 3, 4, 7, 8, 2, 6, 0, 8, 6, 9, 5], {'Repeat starts position': 2}]</code></pre>
-</div>
-</div>
+<section id="data-science-statistics" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="data-science-statistics"><span class="header-section-number">4.3</span> Data Science &amp; Statistics</h2>
+<ul>
+<li>statsmodels – Statistical models (regression, time series).</li>
+<li>sympy – Symbolic mathematics.</li>
+<li>networkx – Graphs and network analysis.</li>
+</ul>
+</section>
+<section id="web-scraping-automation" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="web-scraping-automation"><span class="header-section-number">4.4</span> Web Scraping &amp; Automation</h2>
+<ul>
+<li>requests – HTTP requests.</li>
+<li>beautifulsoup4 – Web scraping.</li>
+<li>selenium – Automating browsers.</li>
+<li>scrapy – Advanced web scraping framework</li>
+</ul>
+</section>
+<section id="data-visualization-dashboards" class="level2" data-number="4.5">
+<h2 data-number="4.5" class="anchored" data-anchor-id="data-visualization-dashboards"><span class="header-section-number">4.5</span> Data Visualization &amp; Dashboards</h2>
+<ul>
+<li>plotly – Interactive plots.</li>
+<li>bokeh – Web-based visualizations.</li>
+<li>altair – Declarative statistical visualization.</li>
+<li>dash – Web apps for data visualization.</li>
+</ul>
+</section>
+<section id="web-development-apis" class="level2" data-number="4.6">
+<h2 data-number="4.6" class="anchored" data-anchor-id="web-development-apis"><span class="header-section-number">4.6</span> Web Development &amp; APIs</h2>
+<ul>
+<li>flask – Lightweight web framework.</li>
+<li>fastapi – Fast APIs with automatic documentation.</li>
+<li>django – Full-featured web framework.</li>
+</ul>
+</section>
+<section id="file-handling-system-tasks" class="level2" data-number="4.7">
+<h2 data-number="4.7" class="anchored" data-anchor-id="file-handling-system-tasks"><span class="header-section-number">4.7</span> File Handling &amp; System Tasks</h2>
+<ul>
+<li>os – Interacting with the operating system.</li>
+<li>shutil – File operations.</li>
+<li>pathlib – Modern file path handling.</li>
+<li>pillow – Image processing.</li>
+</ul>
+</section>
+<section id="performance-parallel-computing" class="level2" data-number="4.8">
+<h2 data-number="4.8" class="anchored" data-anchor-id="performance-parallel-computing"><span class="header-section-number">4.8</span> Performance &amp; Parallel Computing</h2>
+<ul>
+<li>numba – JIT compilation for speed.</li>
+<li>multiprocessing – Parallel computing.</li>
+<li>joblib – Parallelization made easy.</li>
+</ul>
+</section>
+<section id="security-cryptography" class="level2" data-number="4.9">
+<h2 data-number="4.9" class="anchored" data-anchor-id="security-cryptography"><span class="header-section-number">4.9</span> Security &amp; Cryptography</h2>
+<ul>
+<li>cryptography – Encryption and security.</li>
+<li>hashlib – Hashing algorithms.</li>
+</ul>
+</section>
+<section id="bonus-ai-chatbots" class="level2" data-number="4.10">
+<h2 data-number="4.10" class="anchored" data-anchor-id="bonus-ai-chatbots"><span class="header-section-number">4.10</span> Bonus: AI &amp; Chatbots</h2>
+<ul>
+<li>openai – OpenAI’s API for ChatGPT and other models.</li>
+<li>langchain – Building AI-powered applications.</li>
+</ul>
+</section>
+<section id="how-to-install-a-package" class="level2" data-number="4.11">
+<h2 data-number="4.11" class="anchored" data-anchor-id="how-to-install-a-package"><span class="header-section-number">4.11</span> How to install a package</h2>
+<p><code>pip install package_name</code></p>
+</section>
+<section id="how-to-check-a-package-is-available" class="level2" data-number="4.12">
+<h2 data-number="4.12" class="anchored" data-anchor-id="how-to-check-a-package-is-available"><span class="header-section-number">4.12</span> How to check a package is available</h2>
+<p><code>pip show package_name</code></p>
+</section>
+<section id="how-to-show-all-installed-packages" class="level2" data-number="4.13">
+<h2 data-number="4.13" class="anchored" data-anchor-id="how-to-show-all-installed-packages"><span class="header-section-number">4.13</span> How to show all installed packages</h2>
+<p><code>pip list</code></p>
 
 
 </section>
@@ -812,13 +759,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./python_packages.html" class="pagination-link" aria-label="List of most useful Python package">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">List of most useful Python package</span></span>
+      <a href="./regular_expression_table.html" class="pagination-link" aria-label="Regular expression table">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Regular expression table</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./string_tips.html" class="pagination-link" aria-label="String Tips">
-        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">String Tips</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./deepseek_python_pkgs.html" class="pagination-link" aria-label="Most useful Python package: Deep Seek's answer">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Most useful Python package: Deep Seek’s answer</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

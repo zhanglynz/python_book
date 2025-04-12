@@ -26,6 +26,8 @@ book:
         - summaryBook.ipynb
         - list_vs_tuple.ipynb
         - regular_expression_table.ipynb
+        - python_packages.ipynb
+        - deepseek_python_pkgs.ipynb
     # Add more chapters for Part I as needed
 
     # --- Part II ---
