@@ -66,6 +66,28 @@
     ]
   },
   {
+    "objectID": "string_tips.html",
+    "href": "string_tips.html",
+    "title": "4  String Tips",
+    "section": "",
+    "text": "4.1 Get a string reversed\ndef rev_str(s) :\n    return s[::-1]\n\n# test\ns = 'apple'\nrev_str(s)\n\n'elppa'",
+    "crumbs": [
+      "Part III Tips",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>String Tips</span>"
+    ]
+  },
+  {
+    "objectID": "string_tips.html#strip-out-all-spaces",
+    "href": "string_tips.html#strip-out-all-spaces",
+    "title": "4  String Tips",
+    "section": "4.2 Strip out all spaces",
+    "text": "4.2 Strip out all spaces\n\ndef my_strip(s) :\n    return \" \".join(s.split())\n\n# test\nss = \"   This     is    a    strange    sentence.    \"\nprint(ss.lstrip())\nprint(ss.rstrip())\nprint(ss.strip())\nprint(ss.lstrip() is ss.strip())\nprint(my_strip(ss))\n\nThis     is    a    strange    sentence.    \n   This     is    a    strange    sentence.\nThis     is    a    strange    sentence.\nFalse\nThis is a strange sentence.",
+    "crumbs": [
+      "Part III Tips",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>String Tips</span>"
+    ]
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "My Learning Python Notes",

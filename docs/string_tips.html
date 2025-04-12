@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>2&nbsp; Lists vs.&nbsp;Tuples – My Learning Python Notes</title>
+<title>4&nbsp; String Tips – My Learning Python Notes</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,8 +64,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./regular_expression_table.html" rel="next">
-<link href="./summaryBook.html" rel="prev">
+<link href="./regular_expression_table.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -115,7 +114,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./summaryBook.html">Part I Basics</a></li><li class="breadcrumb-item"><a href="./list_vs_tuple.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Lists vs.&nbsp;Tuples</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./string_tips.html">Part III Tips</a></li><li class="breadcrumb-item"><a href="./string_tips.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">String Tips</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -163,7 +162,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./list_vs_tuple.html" class="sidebar-item-text sidebar-link active">
+  <a href="./list_vs_tuple.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Lists vs.&nbsp;Tuples</span></span></a>
   </div>
 </li>
@@ -190,7 +189,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./string_tips.html" class="sidebar-item-text sidebar-link">
+  <a href="./string_tips.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">String Tips</span></span></a>
   </div>
 </li>
@@ -206,18 +205,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#key-differences-between-list-and-tuple" id="toc-key-differences-between-list-and-tuple" class="nav-link active" data-scroll-target="#key-differences-between-list-and-tuple"><span class="header-section-number">2.1</span> Key differences between List and Tuple</a></li>
-  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples"><span class="header-section-number">2.2</span> Examples</a></li>
-  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">2.3</span> Summary</a></li>
+  <li><a href="#get-a-string-reversed" id="toc-get-a-string-reversed" class="nav-link active" data-scroll-target="#get-a-string-reversed"><span class="header-section-number">4.1</span> Get a string reversed</a></li>
+  <li><a href="#strip-out-all-spaces" id="toc-strip-out-all-spaces" class="nav-link" data-scroll-target="#strip-out-all-spaces"><span class="header-section-number">4.2</span> Strip out all spaces</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./summaryBook.html">Part I Basics</a></li><li class="breadcrumb-item"><a href="./list_vs_tuple.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Lists vs.&nbsp;Tuples</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./string_tips.html">Part III Tips</a></li><li class="breadcrumb-item"><a href="./string_tips.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">String Tips</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Lists vs.&nbsp;Tuples</span></h1>
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">String Tips</span></h1>
 </div>
 
 
@@ -234,79 +232,41 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>NB: The following contents are from ChatGpt.</p>
-<p>Both <strong>lists</strong> and <strong>tuples</strong> are used to store collections of items. However, they have a few key differences:</p>
-<section id="key-differences-between-list-and-tuple" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="key-differences-between-list-and-tuple"><span class="header-section-number">2.1</span> Key differences between List and Tuple</h2>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 25%">
-<col style="width: 37%">
-<col style="width: 37%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Feature</th>
-<th>List</th>
-<th>Tuple</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Mutability</strong></td>
-<td>Mutable (can be changed)</td>
-<td>Immutable (cannot be changed)</td>
-</tr>
-<tr class="even">
-<td><strong>Syntax</strong></td>
-<td>Defined using <code>[]</code></td>
-<td>Defined using <code>()</code></td>
-</tr>
-<tr class="odd">
-<td><strong>Performance</strong></td>
-<td>Slightly slower</td>
-<td>Slightly faster</td>
-</tr>
-<tr class="even">
-<td><strong>Use case</strong></td>
-<td>When you need to modify data</td>
-<td>When data should not change</td>
-</tr>
-</tbody>
-</table>
+<section id="get-a-string-reversed" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="get-a-string-reversed"><span class="header-section-number">4.1</span> Get a string reversed</h2>
+<div id="c8179802-4a35-429a-a339-2be26b4312f8" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> rev_str(s) :</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> s[::<span class="op">-</span><span class="dv">1</span>]</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># test</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>s <span class="op">=</span> <span class="st">'apple'</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>rev_str(s)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="1">
+<pre><code>'elppa'</code></pre>
+</div>
+</div>
 </section>
-<section id="examples" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="examples"><span class="header-section-number">2.2</span> Examples</h2>
-<p><strong>Example 1: Mutability</strong></p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># List example</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>my_list <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>my_list[<span class="dv">0</span>] <span class="op">=</span> <span class="dv">10</span>      <span class="co"># This works</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_list)       <span class="co"># Output: [10, 2, 3]</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Tuple example</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>my_tuple <span class="op">=</span> (<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># my_tuple[0] = 10    # ❌ This will raise a TypeError</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong>Example 2: Append elements</strong></p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Lists allow appending</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>my_list.append(<span class="dv">4</span>)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_list)       <span class="co"># Output: [10, 2, 3, 4]</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Tuples do not allow appending</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># my_tuple.append(4)  # ❌ AttributeError</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong>Example 3: Using as dictionary keys</strong></p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Tuples can be used as dictionary keys</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>my_dict <span class="op">=</span> {(<span class="dv">1</span>, <span class="dv">2</span>): <span class="st">"a pair"</span>}</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_dict[(<span class="dv">1</span>, <span class="dv">2</span>)])  <span class="co"># Output: "a pair"</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Lists cannot be used as dictionary keys</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># my_dict = {[1, 2]: "a pair"}  # ❌ TypeError</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="summary" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="summary"><span class="header-section-number">2.3</span> Summary</h2>
-<ul>
-<li>Use a <strong>list</strong> when we need to modify the data (e.g., adding, removing, updating items).</li>
-<li>Use a <strong>tuple</strong> when we want to ensure the data stays constant (e.g., coordinates, fixed settings, dictionary keys).</li>
-</ul>
+<section id="strip-out-all-spaces" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="strip-out-all-spaces"><span class="header-section-number">4.2</span> Strip out all spaces</h2>
+<div id="788e201b-4474-4981-a73d-359695909096" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> my_strip(s) :</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">" "</span>.join(s.split())</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># test</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>ss <span class="op">=</span> <span class="st">"   This     is    a    strange    sentence.    "</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(ss.lstrip())</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(ss.rstrip())</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(ss.strip())</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(ss.lstrip() <span class="kw">is</span> ss.strip())</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_strip(ss))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>This     is    a    strange    sentence.    
+   This     is    a    strange    sentence.
+This     is    a    strange    sentence.
+False
+This is a strange sentence.</code></pre>
+</div>
+</div>
 
 
 </section>
@@ -734,14 +694,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./summaryBook.html" class="pagination-link" aria-label="Summary of *PY4E*">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Summary of <em>PY4E</em></span></span>
+      <a href="./regular_expression_table.html" class="pagination-link" aria-label="Regular expression table">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Regular expression table</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./regular_expression_table.html" class="pagination-link" aria-label="Regular expression table">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Regular expression table</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->

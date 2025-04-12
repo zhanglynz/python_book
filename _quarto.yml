@@ -38,6 +38,8 @@ book:
     # --- Part III ---
     - part: "Part III Tips"    # Defines the start of Part III
       # List the chapter .qmd files for Part III below
+      chapters:
+        - string_tips.ipynb
     #- chapter5_common_tips.qmd
     #- chapter6_advanced_tips.qmd
     # Add more chapters for Part III as needed
