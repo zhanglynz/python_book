@@ -31,6 +31,8 @@ book:
     # --- Part II ---
     - part: "Part II Examples" # Defines the start of Part II
       # List the chapter .qmd files for Part II below
+      chapters: 
+        - numerical_computing.ipynb
     #- chapter3_simple_example.qmd
     #- chapter4_complex_example.qmd
     # Add more chapters for Part II as needed

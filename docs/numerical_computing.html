@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>3&nbsp; Regular expression table – My Learning Python Notes</title>
+<title>4&nbsp; Numerical Computing – My Learning Python Notes</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -30,8 +64,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./numerical_computing.html" rel="next">
-<link href="./list_vs_tuple.html" rel="prev">
+<link href="./string_tips.html" rel="next">
+<link href="./regular_expression_table.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -81,7 +115,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./summaryBook.html">Part I Basics</a></li><li class="breadcrumb-item"><a href="./regular_expression_table.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Regular expression table</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./numerical_computing.html">Part II Examples</a></li><li class="breadcrumb-item"><a href="./numerical_computing.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Numerical Computing</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -135,7 +169,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./regular_expression_table.html" class="sidebar-item-text sidebar-link active">
+  <a href="./regular_expression_table.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Regular expression table</span></span></a>
   </div>
 </li>
@@ -152,7 +186,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./numerical_computing.html" class="sidebar-item-text sidebar-link">
+  <a href="./numerical_computing.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Numerical Computing</span></span></a>
   </div>
 </li>
@@ -180,15 +214,22 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#find-number-of-digits" id="toc-find-number-of-digits" class="nav-link active" data-scroll-target="#find-number-of-digits"><span class="header-section-number">4.1</span> Find number of digits</a></li>
+  <li><a href="#the-first-fibonacci-number-greater-than-m" id="toc-the-first-fibonacci-number-greater-than-m" class="nav-link" data-scroll-target="#the-first-fibonacci-number-greater-than-m"><span class="header-section-number">4.2</span> The first Fibonacci number greater than m</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./summaryBook.html">Part I Basics</a></li><li class="breadcrumb-item"><a href="./regular_expression_table.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Regular expression table</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./numerical_computing.html">Part II Examples</a></li><li class="breadcrumb-item"><a href="./numerical_computing.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Numerical Computing</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Regular expression table</span></h1>
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Numerical Computing</span></h1>
 </div>
 
 
@@ -205,139 +246,83 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>NB: The following content is from ChatGPT.</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 60%">
-<col style="width: 39%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Regular Expression</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>.</code></td>
-<td>Matches any character except a newline</td>
-</tr>
-<tr class="even">
-<td><code>^</code></td>
-<td>Matches the start of a string</td>
-</tr>
-<tr class="odd">
-<td><code>$</code></td>
-<td>Matches the end of a string</td>
-</tr>
-<tr class="even">
-<td><code>\d</code></td>
-<td>Matches any digit (0-9)</td>
-</tr>
-<tr class="odd">
-<td><code>\D</code></td>
-<td>Matches any non-digit character</td>
-</tr>
-<tr class="even">
-<td><code>\w</code></td>
-<td>Matches any word character (letters, digits, underscore)</td>
-</tr>
-<tr class="odd">
-<td><code>\W</code></td>
-<td>Matches any non-word character</td>
-</tr>
-<tr class="even">
-<td><code>\s</code></td>
-<td>Matches any whitespace (space, tab, newline)</td>
-</tr>
-<tr class="odd">
-<td><code>\S</code></td>
-<td>Matches any non-whitespace character</td>
-</tr>
-<tr class="even">
-<td><code>\b</code></td>
-<td>Matches a word boundary</td>
-</tr>
-<tr class="odd">
-<td><code>\B</code></td>
-<td>Matches a non-word boundary</td>
-</tr>
-<tr class="even">
-<td><code>[abc]</code></td>
-<td>Matches any character inside the brackets (a, b, or c)</td>
-</tr>
-<tr class="odd">
-<td><code>[^abc]</code></td>
-<td>Matches any character <em>not</em> inside the brackets</td>
-</tr>
-<tr class="even">
-<td><code>[a-z]</code></td>
-<td>Matches any lowercase letter from a to z</td>
-</tr>
-<tr class="odd">
-<td><code>[A-Z]</code></td>
-<td>Matches any uppercase letter from A to Z</td>
-</tr>
-<tr class="even">
-<td><code>[0-9]</code></td>
-<td>Matches any digit from 0 to 9</td>
-</tr>
-<tr class="odd">
-<td><code>a|b</code></td>
-<td>Matches either ‘a’ or ‘b’</td>
-</tr>
-<tr class="even">
-<td><code>()</code></td>
-<td>Groups expressions together for capturing</td>
-</tr>
-<tr class="odd">
-<td><code>(?:...)</code></td>
-<td>Groups expressions together without capturing</td>
-</tr>
-<tr class="even">
-<td><code>a*</code></td>
-<td>Matches ‘a’ zero or more times</td>
-</tr>
-<tr class="odd">
-<td><code>a+</code></td>
-<td>Matches ‘a’ one or more times</td>
-</tr>
-<tr class="even">
-<td><code>a?</code></td>
-<td>Matches ‘a’ zero or one time</td>
-</tr>
-<tr class="odd">
-<td><code>a{3}</code></td>
-<td>Matches exactly 3 occurrences of ‘a’</td>
-</tr>
-<tr class="even">
-<td><code>a{3,}</code></td>
-<td>Matches 3 or more occurrences of ‘a’</td>
-</tr>
-<tr class="odd">
-<td><code>a{3,5}</code></td>
-<td>Matches between 3 and 5 occurrences of ‘a’</td>
-</tr>
-<tr class="even">
-<td><code>(?=...)</code></td>
-<td>Positive lookahead (ensures match is followed by …)</td>
-</tr>
-<tr class="odd">
-<td><code>(?!...)</code></td>
-<td>Negative lookahead (ensures match is <em>not</em> followed by …)</td>
-</tr>
-<tr class="even">
-<td><code>(?&lt;=...)</code></td>
-<td>Positive lookbehind (ensures match is preceded by …)</td>
-</tr>
-<tr class="odd">
-<td><code>(?&lt;!...)</code></td>
-<td>Negative lookbehind (ensures match is <em>not</em> preceded by …)</td>
-</tr>
-</tbody>
-</table>
+<section id="find-number-of-digits" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="find-number-of-digits"><span class="header-section-number">4.1</span> Find number of digits</h2>
+<p><strong>Problem:</strong> Write a function, where the input is an integer number and the output is the number of digits of this number.</p>
+<div id="cell-1" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Method 1</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> math <span class="im">import</span> log, floor</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> find_nbr_of_digits_1(an_int) :</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> floor(log(an_int, <span class="dv">10</span>)) <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span> :</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">1</span>    </span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co">## test</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(find_nbr_of_digits_1(<span class="dv">12345</span>))</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(find_nbr_of_digits_1(<span class="dv">2</span> <span class="op">**</span> <span class="dv">10</span>))</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(find_nbr_of_digits_1(<span class="dv">0</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>5
+4
+1</code></pre>
+</div>
+</div>
+<div id="cell-2" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Method 2</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> find_nbr_of_digits_2(an_int) :</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    c <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> <span class="va">True</span> :</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>        an_int <span class="op">=</span> an_int <span class="op">//</span> <span class="dv">10</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>        c <span class="op">=</span> c <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> an_int <span class="op">==</span> <span class="dv">0</span> :</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>            <span class="cf">break</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> c</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="co">## test</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(find_nbr_of_digits_2(<span class="dv">12345</span>))</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(find_nbr_of_digits_2(<span class="dv">2</span> <span class="op">**</span> <span class="dv">10</span>)) </span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(find_nbr_of_digits_2(<span class="dv">0</span>))   </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>5
+4
+1</code></pre>
+</div>
+</div>
+</section>
+<section id="the-first-fibonacci-number-greater-than-m" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="the-first-fibonacci-number-greater-than-m"><span class="header-section-number">4.2</span> The first Fibonacci number greater than m</h2>
+<p><strong>Problem:</strong> Let F_n be the n-th Fibonacci number. Find n, such that F_n &gt;= m, where m &gt;= 1.</p>
+<div id="cell-4" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> find_fibo_index(m) :</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    f1 <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    f2 <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    i <span class="op">=</span> <span class="dv">2</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> m <span class="op">==</span> <span class="dv">1</span> :</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">1</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>            f <span class="op">=</span> f1 <span class="op">+</span> f2</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>            i <span class="op">=</span> i <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> f <span class="op">&gt;=</span> m :</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>                <span class="cf">break</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>            f1 <span class="op">=</span> f2</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>            f2 <span class="op">=</span> f</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> i</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="co">## test</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>find_fibo_index(<span class="dv">10000</span>)</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>    </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="9">
+<pre><code>21</code></pre>
+</div>
+</div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -762,13 +747,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./list_vs_tuple.html" class="pagination-link" aria-label="Lists vs. Tuples">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Lists vs.&nbsp;Tuples</span></span>
+      <a href="./regular_expression_table.html" class="pagination-link" aria-label="Regular expression table">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Regular expression table</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./numerical_computing.html" class="pagination-link" aria-label="Numerical Computing">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Numerical Computing</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./string_tips.html" class="pagination-link" aria-label="String Tips">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">String Tips</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -66,25 +66,47 @@
     ]
   },
   {
+    "objectID": "numerical_computing.html",
+    "href": "numerical_computing.html",
+    "title": "4  Numerical Computing",
+    "section": "",
+    "text": "4.1 Find number of digits\nProblem: Write a function, where the input is an integer number and the output is the number of digits of this number.\n# Method 1\n\nfrom math import log, floor\ndef find_nbr_of_digits_1(an_int) :\n    try:\n        return floor(log(an_int, 10)) + 1\n    except :\n        return 1    \n\n## test\nprint(find_nbr_of_digits_1(12345))\nprint(find_nbr_of_digits_1(2 ** 10))\nprint(find_nbr_of_digits_1(0))\n\n5\n4\n1\n# Method 2\n\ndef find_nbr_of_digits_2(an_int) :\n    c = 0\n    while True :\n        an_int = an_int // 10\n        c = c + 1\n        if an_int == 0 :\n            break\n    return c\n\n## test\nprint(find_nbr_of_digits_2(12345))\nprint(find_nbr_of_digits_2(2 ** 10)) \nprint(find_nbr_of_digits_2(0))   \n\n5\n4\n1",
+    "crumbs": [
+      "Part II Examples",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Numerical Computing</span>"
+    ]
+  },
+  {
+    "objectID": "numerical_computing.html#the-first-fibonacci-number-greater-than-m",
+    "href": "numerical_computing.html#the-first-fibonacci-number-greater-than-m",
+    "title": "4  Numerical Computing",
+    "section": "4.2 The first Fibonacci number greater than m",
+    "text": "4.2 The first Fibonacci number greater than m\nProblem: Let F_n be the n-th Fibonacci number. Find n, such that F_n &gt;= m, where m &gt;= 1.\n\ndef find_fibo_index(m) :\n    f1 = 1\n    f2 = 1\n    i = 2\n    if m == 1 :\n        return 1\n    else:\n        while True:\n            f = f1 + f2\n            i = i + 1\n            if f &gt;= m :\n                break\n            f1 = f2\n            f2 = f\n        return i\n\n## test\nfind_fibo_index(10000)\n\n    \n\n21",
+    "crumbs": [
+      "Part II Examples",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Numerical Computing</span>"
+    ]
+  },
+  {
     "objectID": "string_tips.html",
     "href": "string_tips.html",
-    "title": "4  String Tips",
+    "title": "5  String Tips",
     "section": "",
-    "text": "4.1 Get a string reversed\ndef rev_str(s) :\n    return s[::-1]\n\n# test\ns = 'apple'\nrev_str(s)\n\n'elppa'",
+    "text": "5.1 Get a string reversed\ndef rev_str(s) :\n    return s[::-1]\n\n# test\ns = 'apple'\nrev_str(s)\n\n'elppa'",
     "crumbs": [
       "Part III Tips",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>String Tips</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>String Tips</span>"
     ]
   },
   {
     "objectID": "string_tips.html#strip-out-all-spaces",
     "href": "string_tips.html#strip-out-all-spaces",
-    "title": "4  String Tips",
-    "section": "4.2 Strip out all spaces",
-    "text": "4.2 Strip out all spaces\n\ndef my_strip(s) :\n    return \" \".join(s.split())\n\n# test\nss = \"   This     is    a    strange    sentence.    \"\nprint(ss.lstrip())\nprint(ss.rstrip())\nprint(ss.strip())\nprint(ss.lstrip() is ss.strip())\nprint(my_strip(ss))\n\nThis     is    a    strange    sentence.    \n   This     is    a    strange    sentence.\nThis     is    a    strange    sentence.\nFalse\nThis is a strange sentence.",
+    "title": "5  String Tips",
+    "section": "5.2 Strip out all spaces",
+    "text": "5.2 Strip out all spaces\n\ndef my_strip(s) :\n    return \" \".join(s.split())\n\n# test\nss = \"   This     is    a    strange    sentence.    \"\nprint(ss.lstrip())\nprint(ss.rstrip())\nprint(ss.strip())\nprint(ss.lstrip() is ss.strip())\nprint(my_strip(ss))\n\nThis     is    a    strange    sentence.    \n   This     is    a    strange    sentence.\nThis     is    a    strange    sentence.\nFalse\nThis is a strange sentence.",
     "crumbs": [
       "Part III Tips",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>String Tips</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>String Tips</span>"
     ]
   },
   {
