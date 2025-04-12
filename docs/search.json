@@ -81,7 +81,7 @@
     "href": "numerical_computing.html#the-first-fibonacci-number-greater-than-m",
     "title": "4  Numerical Computing",
     "section": "4.2 The first Fibonacci number greater than m",
-    "text": "4.2 The first Fibonacci number greater than m\nProblem: Let F_n be the n-th Fibonacci number. Find n, such that F_n &gt;= m, where m &gt;= 1.\n\ndef find_fibo_index(m) :\n    f1 = 1\n    f2 = 1\n    i = 2\n    if m == 1 :\n        return 1\n    else:\n        while True:\n            f = f1 + f2\n            i = i + 1\n            if f &gt;= m :\n                break\n            f1 = f2\n            f2 = f\n        return i\n\n## test\nfind_fibo_index(10000)\n\n    \n\n21",
+    "text": "4.2 The first Fibonacci number greater than m\nProblem: Let F_n be the n-th Fibonacci number. Find n, such that F_n &gt;= m, where m &gt;= 1.\n\ndef find_fibo_index(m) :\n    f1 = 1\n    f2 = 1\n    i = 2\n    if m == 1 :\n        return 1\n    else:\n        while True:\n            f = f1 + f2\n            i = i + 1\n            if f &gt;= m :\n                break\n            f1 = f2\n            f2 = f\n        return i\n\n## test\nprint(find_fibo_index(10000))\nprint(find_fibo_index(1))\n\n    \n\n21\n1",
     "crumbs": [
       "Part II Examples",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Numerical Computing</span>"
