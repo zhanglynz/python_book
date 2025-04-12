@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>5&nbsp; Numerical Computing – My Learning Python Notes</title>
+<title>6&nbsp; Numerical Computing – My Learning Python Notes</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -65,7 +65,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./string_tips.html" rel="next">
-<link href="./python_packages.html" rel="prev">
+<link href="./deepseek_python_pkgs.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -115,7 +115,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./numerical_computing.html">Part II Examples</a></li><li class="breadcrumb-item"><a href="./numerical_computing.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Numerical Computing</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./numerical_computing.html">Part II Examples</a></li><li class="breadcrumb-item"><a href="./numerical_computing.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Numerical Computing</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -176,7 +176,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./python_packages.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">List of most useful Python package</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Most useful Python packages: ChatGPT’s answer</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./deepseek_python_pkgs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Most useful Python package: Deep Seek’s answer</span></span></a>
   </div>
 </li>
       </ul>
@@ -193,7 +199,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./numerical_computing.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Numerical Computing</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Numerical Computing</span></span></a>
   </div>
 </li>
       </ul>
@@ -210,7 +216,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./string_tips.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">String Tips</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">String Tips</span></span></a>
   </div>
 </li>
       </ul>
@@ -225,18 +231,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#find-number-of-digits" id="toc-find-number-of-digits" class="nav-link active" data-scroll-target="#find-number-of-digits"><span class="header-section-number">5.1</span> Find number of digits</a></li>
-  <li><a href="#the-first-fibonacci-number-greater-than-m" id="toc-the-first-fibonacci-number-greater-than-m" class="nav-link" data-scroll-target="#the-first-fibonacci-number-greater-than-m"><span class="header-section-number">5.2</span> The first Fibonacci number greater than m</a></li>
-  <li><a href="#long-division" id="toc-long-division" class="nav-link" data-scroll-target="#long-division"><span class="header-section-number">5.3</span> Long division</a></li>
+  <li><a href="#find-number-of-digits" id="toc-find-number-of-digits" class="nav-link active" data-scroll-target="#find-number-of-digits"><span class="header-section-number">6.1</span> Find number of digits</a></li>
+  <li><a href="#the-first-fibonacci-number-greater-than-m" id="toc-the-first-fibonacci-number-greater-than-m" class="nav-link" data-scroll-target="#the-first-fibonacci-number-greater-than-m"><span class="header-section-number">6.2</span> The first Fibonacci number greater than m</a></li>
+  <li><a href="#long-division" id="toc-long-division" class="nav-link" data-scroll-target="#long-division"><span class="header-section-number">6.3</span> Long division</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./numerical_computing.html">Part II Examples</a></li><li class="breadcrumb-item"><a href="./numerical_computing.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Numerical Computing</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./numerical_computing.html">Part II Examples</a></li><li class="breadcrumb-item"><a href="./numerical_computing.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Numerical Computing</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Numerical Computing</span></h1>
+<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Numerical Computing</span></h1>
 </div>
 
 
@@ -253,8 +259,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="find-number-of-digits" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="find-number-of-digits"><span class="header-section-number">5.1</span> Find number of digits</h2>
+<section id="find-number-of-digits" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="find-number-of-digits"><span class="header-section-number">6.1</span> Find number of digits</h2>
 <p><strong>Problem:</strong> Write a function, where the input is an integer number and the output is the number of digits of this number.</p>
 <div id="cell-1" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Method 1</span></span>
@@ -299,8 +305,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="the-first-fibonacci-number-greater-than-m" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="the-first-fibonacci-number-greater-than-m"><span class="header-section-number">5.2</span> The first Fibonacci number greater than m</h2>
+<section id="the-first-fibonacci-number-greater-than-m" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="the-first-fibonacci-number-greater-than-m"><span class="header-section-number">6.2</span> The first Fibonacci number greater than m</h2>
 <p><strong>Problem:</strong> Let F_n be the n-th Fibonacci number. Find n, such that F_n &gt;= m, where m &gt;= 1.</p>
 <div id="cell-4" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> find_fibo_index(m) :</span>
@@ -328,8 +334,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="long-division" class="level2" data-number="5.3">
-<h2 data-number="5.3" class="anchored" data-anchor-id="long-division"><span class="header-section-number">5.3</span> Long division</h2>
+<section id="long-division" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="long-division"><span class="header-section-number">6.3</span> Long division</h2>
 <p><strong>Problem:</strong> Find n / d, where both n and d are integers but d cannot be 0.</p>
 <div id="cell-6" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> long_div(n, d) :</span>
@@ -812,13 +818,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./python_packages.html" class="pagination-link" aria-label="List of most useful Python package">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">List of most useful Python package</span></span>
+      <a href="./deepseek_python_pkgs.html" class="pagination-link" aria-label="Most useful Python package: Deep Seek's answer">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Most useful Python package: Deep Seek’s answer</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./string_tips.html" class="pagination-link" aria-label="String Tips">
-        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">String Tips</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">String Tips</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>5&nbsp; String Tips – My Learning Python Notes</title>
+<title>7&nbsp; String Tips – My Learning Python Notes</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -114,7 +114,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./string_tips.html">Part III Tips</a></li><li class="breadcrumb-item"><a href="./string_tips.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">String Tips</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./string_tips.html">Part III Tips</a></li><li class="breadcrumb-item"><a href="./string_tips.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">String Tips</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -172,6 +172,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Regular expression table</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./python_packages.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Most useful Python packages: ChatGPT’s answer</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./deepseek_python_pkgs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Most useful Python package: Deep Seek’s answer</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -186,7 +198,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./numerical_computing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Numerical Computing</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Numerical Computing</span></span></a>
   </div>
 </li>
       </ul>
@@ -203,7 +215,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./string_tips.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">String Tips</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">String Tips</span></span></a>
   </div>
 </li>
       </ul>
@@ -218,17 +230,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#get-a-string-reversed" id="toc-get-a-string-reversed" class="nav-link active" data-scroll-target="#get-a-string-reversed"><span class="header-section-number">5.1</span> Get a string reversed</a></li>
-  <li><a href="#strip-out-all-spaces" id="toc-strip-out-all-spaces" class="nav-link" data-scroll-target="#strip-out-all-spaces"><span class="header-section-number">5.2</span> Strip out all spaces</a></li>
+  <li><a href="#get-a-string-reversed" id="toc-get-a-string-reversed" class="nav-link active" data-scroll-target="#get-a-string-reversed"><span class="header-section-number">7.1</span> Get a string reversed</a></li>
+  <li><a href="#strip-out-all-spaces" id="toc-strip-out-all-spaces" class="nav-link" data-scroll-target="#strip-out-all-spaces"><span class="header-section-number">7.2</span> Strip out all spaces</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./string_tips.html">Part III Tips</a></li><li class="breadcrumb-item"><a href="./string_tips.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">String Tips</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./string_tips.html">Part III Tips</a></li><li class="breadcrumb-item"><a href="./string_tips.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">String Tips</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">String Tips</span></h1>
+<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">String Tips</span></h1>
 </div>
 
 
@@ -245,8 +257,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="get-a-string-reversed" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="get-a-string-reversed"><span class="header-section-number">5.1</span> Get a string reversed</h2>
+<section id="get-a-string-reversed" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="get-a-string-reversed"><span class="header-section-number">7.1</span> Get a string reversed</h2>
 <div id="c8179802-4a35-429a-a339-2be26b4312f8" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> rev_str(s) :</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> s[::<span class="op">-</span><span class="dv">1</span>]</span>
@@ -259,8 +271,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="strip-out-all-spaces" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="strip-out-all-spaces"><span class="header-section-number">5.2</span> Strip out all spaces</h2>
+<section id="strip-out-all-spaces" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="strip-out-all-spaces"><span class="header-section-number">7.2</span> Strip out all spaces</h2>
 <div id="788e201b-4474-4981-a73d-359695909096" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> my_strip(s) :</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">" "</span>.join(s.split())</span>
@@ -708,7 +720,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./numerical_computing.html" class="pagination-link" aria-label="Numerical Computing">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Numerical Computing</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Numerical Computing</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
