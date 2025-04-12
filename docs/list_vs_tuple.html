@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>3&nbsp; Lists vs.&nbsp;Tuples – My Learning Python Notes</title>
+<title>2&nbsp; Lists vs.&nbsp;Tuples – My Learning Python Notes</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,8 +64,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./ch11.html" rel="next">
-<link href="./ch10.html" rel="prev">
+<link href="./regular_expression_table.html" rel="next">
+<link href="./summaryBook.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -115,7 +115,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./summaryBook.html">Part I Basics</a></li><li class="breadcrumb-item"><a href="./list_vs_tuple.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Lists vs.&nbsp;Tuples</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./summaryBook.html">Part I Basics</a></li><li class="breadcrumb-item"><a href="./list_vs_tuple.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Lists vs.&nbsp;Tuples</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -158,25 +158,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./summaryBook.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Summary of <em>Python for Everybody</em></span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./ch10.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Tuples</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Summary of <em>PY4E</em></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./list_vs_tuple.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Lists vs.&nbsp;Tuples</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Lists vs.&nbsp;Tuples</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ch11.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Regular expressions</span></span></a>
+  <a href="./regular_expression_table.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Regular expression table</span></span></a>
   </div>
 </li>
       </ul>
@@ -199,18 +193,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#key-differences-between-list-and-tuple" id="toc-key-differences-between-list-and-tuple" class="nav-link active" data-scroll-target="#key-differences-between-list-and-tuple"><span class="header-section-number">3.1</span> Key differences between List and Tuple</a></li>
-  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples"><span class="header-section-number">3.2</span> Examples</a></li>
-  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">3.3</span> Summary</a></li>
+  <li><a href="#key-differences-between-list-and-tuple" id="toc-key-differences-between-list-and-tuple" class="nav-link active" data-scroll-target="#key-differences-between-list-and-tuple"><span class="header-section-number">2.1</span> Key differences between List and Tuple</a></li>
+  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples"><span class="header-section-number">2.2</span> Examples</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">2.3</span> Summary</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./summaryBook.html">Part I Basics</a></li><li class="breadcrumb-item"><a href="./list_vs_tuple.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Lists vs.&nbsp;Tuples</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./summaryBook.html">Part I Basics</a></li><li class="breadcrumb-item"><a href="./list_vs_tuple.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Lists vs.&nbsp;Tuples</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Lists vs.&nbsp;Tuples</span></h1>
+<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Lists vs.&nbsp;Tuples</span></h1>
 </div>
 
 
@@ -229,8 +223,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <p>NB: The following contens are from ChatGpt.</p>
 <p>Both <strong>lists</strong> and <strong>tuples</strong> are used to store collections of items. However, they have a few key differences:</p>
-<section id="key-differences-between-list-and-tuple" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="key-differences-between-list-and-tuple"><span class="header-section-number">3.1</span> Key differences between List and Tuple</h2>
+<section id="key-differences-between-list-and-tuple" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="key-differences-between-list-and-tuple"><span class="header-section-number">2.1</span> Key differences between List and Tuple</h2>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 25%">
@@ -268,8 +262,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tbody>
 </table>
 </section>
-<section id="examples" class="level2" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="examples"><span class="header-section-number">3.2</span> Examples</h2>
+<section id="examples" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="examples"><span class="header-section-number">2.2</span> Examples</h2>
 <p><strong>Example 1: Mutability</strong></p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># List example</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>my_list <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
@@ -294,8 +288,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Lists cannot be used as dictionary keys</span></span>
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># my_dict = {[1, 2]: "a pair"}  # ❌ TypeError</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="summary" class="level2" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="summary"><span class="header-section-number">3.3</span> Summary</h2>
+<section id="summary" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="summary"><span class="header-section-number">2.3</span> Summary</h2>
 <ul>
 <li>Use a <strong>list</strong> when we need to modify the data (e.g., adding, removing, updating items).</li>
 <li>Use a <strong>tuple</strong> when we want to ensure the data stays constant (e.g., coordinates, fixed settings, dictionary keys).</li>
@@ -727,13 +721,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./ch10.html" class="pagination-link" aria-label="Tuples">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Tuples</span></span>
+      <a href="./summaryBook.html" class="pagination-link" aria-label="Summary of *PY4E*">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Summary of <em>PY4E</em></span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./ch11.html" class="pagination-link" aria-label="Regular expressions">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Regular expressions</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./regular_expression_table.html" class="pagination-link" aria-label="Regular expression table">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Regular expression table</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
