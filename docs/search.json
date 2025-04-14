@@ -290,7 +290,7 @@
     "href": "numerical_computing.html",
     "title": "6  Numerical Computing",
     "section": "",
-    "text": "6.1 Find number of digits\nProblem: Write a function, where the input is an integer number and the output is the number of digits of this number.\n# Method 1\n\nfrom math import log, floor\ndef find_nbr_of_digits_1(an_int) :\n    try:\n        return floor(log(an_int, 10)) + 1\n    except :\n        return 1    \n\n## test\nprint(find_nbr_of_digits_1(12345))\nprint(find_nbr_of_digits_1(2 ** 10))\nprint(find_nbr_of_digits_1(0))\n\n5\n4\n1\n# Method 2\n\ndef find_nbr_of_digits_2(an_int) :\n    c = 0\n    while True :\n        an_int = an_int // 10\n        c = c + 1\n        if an_int == 0 :\n            break\n    return c\n\n## test\nprint(find_nbr_of_digits_2(12345))\nprint(find_nbr_of_digits_2(2 ** 10)) \nprint(find_nbr_of_digits_2(0))   \n\n5\n4\n1",
+    "text": "6.1 Find number of digits\nProblem: Write a function, where the input is an integer and the output is the number of digits of this number.\n# Method 1\n\nfrom math import log, floor\ndef find_nbr_of_digits_1(an_int) :\n    try:\n        return floor(log(an_int, 10)) + 1\n    except :\n        return 1    \n\n## test\nprint(find_nbr_of_digits_1(12345))\nprint(find_nbr_of_digits_1(2 ** 10))\nprint(find_nbr_of_digits_1(0))\n\n5\n4\n1\n# Method 2\n\ndef find_nbr_of_digits_2(an_int) :\n    c = 0\n    while True :\n        an_int = an_int // 10\n        c = c + 1\n        if an_int == 0 :\n            break\n    return c\n\n## test\nprint(find_nbr_of_digits_2(12345))\nprint(find_nbr_of_digits_2(2 ** 10)) \nprint(find_nbr_of_digits_2(0))   \n\n5\n4\n1",
     "crumbs": [
       "Part II Examples",
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Numerical Computing</span>"
@@ -301,7 +301,7 @@
     "href": "numerical_computing.html#the-first-fibonacci-number-greater-than-m",
     "title": "6  Numerical Computing",
     "section": "6.2 The first Fibonacci number greater than m",
-    "text": "6.2 The first Fibonacci number greater than m\nProblem: Let F_n be the n-th Fibonacci number. Find n, such that F_n &gt;= m, where m &gt;= 1.\n\ndef find_fibo_index(m) :\n    f1 = 1\n    f2 = 1\n    i = 2\n    if m == 1 :\n        return 1\n    else:\n        while True:\n            f = f1 + f2\n            i = i + 1\n            if f &gt;= m :\n                break\n            f1 = f2\n            f2 = f\n        return i\n\n## test\nprint(find_fibo_index(10000))\nprint(find_fibo_index(1))\n\n21\n1",
+    "text": "6.2 The first Fibonacci number greater than m\nProblem: Let F_n be the n-th Fibonacci number. Find n, such that F_n &gt; m, where m &gt;= 1.\n\ndef find_fibo_index(m) :\n    f1 = 1\n    f2 = 1\n    i = 2\n    if m == 1 :\n        return 1\n    else:\n        while True:\n            f = f1 + f2\n            i = i + 1\n            if f &gt; m :\n                break\n            f1 = f2\n            f2 = f\n        return i\n\n## test\nprint(find_fibo_index(10000))\nprint(find_fibo_index(1))\n\n21\n1",
     "crumbs": [
       "Part II Examples",
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Numerical Computing</span>"
@@ -313,6 +313,17 @@
     "title": "6  Numerical Computing",
     "section": "6.3 Long division",
     "text": "6.3 Long division\nProblem: Find n / d, where both n and d are integers but d cannot be 0.\n\ndef long_div(n, d) :\n    q_list = list()\n    r_list = list()\n    # initial\n    q = n // d\n    r = n % d\n    q_list.append(q)\n    r_list.append(r)\n    if r == 0 :\n        return [[q, r], ['No repeat']]\n    else :\n        c = 0\n        while True :\n            n = 10 * r\n            q = n // d\n            r = n % d\n            q_list.append(q)\n            r_list.append(r)\n            c = c + 1\n            if (r in r_list[:c]) or r == 0 :\n                break\n        if r_list[-1] == 0 :\n            the_re = [q_list, ['No repeat']]\n        else :\n            m = len(r_list)\n            for i in range(m - 1) :\n                if r_list[i] == r_list[-1] :\n                    the_re = [q_list, {\"Repeat starts position\": i + 2}] \n                    break\n        return the_re\n\n## test\nprint(long_div(1, 2))\nprint(long_div(1, 3))\nprint(long_div(1, 6))\nprint(long_div(1, 7))\nprint(long_div(20, 2))\nprint(long_div(20, 3))\nprint(long_div(20, 6))\nprint(long_div(20, 7))\nprint(long_div(199, 23))\n\n[[0, 5], ['No repeat']]\n[[0, 3], {'Repeat starts position': 2}]\n[[0, 1, 6], {'Repeat starts position': 3}]\n[[0, 1, 4, 2, 8, 5, 7], {'Repeat starts position': 2}]\n[[10, 0], ['No repeat']]\n[[6, 6], {'Repeat starts position': 2}]\n[[3, 3], {'Repeat starts position': 2}]\n[[2, 8, 5, 7, 1, 4, 2], {'Repeat starts position': 2}]\n[[8, 6, 5, 2, 1, 7, 3, 9, 1, 3, 0, 4, 3, 4, 7, 8, 2, 6, 0, 8, 6, 9, 5], {'Repeat starts position': 2}]",
+    "crumbs": [
+      "Part II Examples",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Numerical Computing</span>"
+    ]
+  },
+  {
+    "objectID": "numerical_computing.html#frequency-of-digits-in-a-large-number",
+    "href": "numerical_computing.html#frequency-of-digits-in-a-large-number",
+    "title": "6  Numerical Computing",
+    "section": "6.4 Frequency of digits in a large number",
+    "text": "6.4 Frequency of digits in a large number\n\nimport matplotlib.pyplot as plt\n\ndef ordered_bar_plot(a, n) :\n    nbr = a ** n\n    s = str(nbr)\n    freq = dict()\n    \n    for ch in s :\n        freq[ch] = freq.get(ch, 0) + 1\n\n    li = list()\n    for key, value in list(freq.items()) :\n        li.append((value, key))\n    li.sort(reverse = True)\n\n    total_freq = sum(freq.values())\n    \n    new_d = dict()\n    for v, k in li :\n        new_d[k] = v / total_freq\n    \n    plt.bar(new_d.keys(), new_d.values(), color='g')\n    plt.xlabel('Digit')\n    plt.ylabel('Relative frequency')\n    plt.title('Distribution of digits in %d^%d' % (a, n))\n    plt.show()\n\n# test\nordered_bar_plot(2, 10000)\n\n\n\n\n\n\n\n\n\nfrom sys import set_int_max_str_digits\nset_int_max_str_digits(7000)\nordered_bar_plot(3, 10000)\n\n\n\n\n\n\n\n\n\nordered_bar_plot(5, 10000)",
     "crumbs": [
       "Part II Examples",
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Numerical Computing</span>"
