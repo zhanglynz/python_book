@@ -4,7 +4,172 @@
     "href": "summaryBook.html",
     "title": "1  Summary of PY4E",
     "section": "",
-    "text": "I have studied Python for Everybody: Exploring Data Using Python 3 by Charles R. Severance, and here I write down a Summary.\n\nCh 1 Introduction to Computer and computer languages\n\ncomputer: Input/output devices; CPU; main memory (RAM); secondary memory; network\nmachine language; low level language; high level language\n“The Python interpreter is written in a high-level language called ‘C’.”\n“Python scripts have names end with .py”\nImportant concepts: input and output; sequential execution, conditional execution, and repeated execution; reuse.\nThree general types of errors: syntax errors, logic errors, and semantic errors (the code runs without producting an error message, but it does not do the “right” thing.)\n\nCh 2 Variables, expressions and statements\n\nPython is case sensitive, that is, A is different from a\nVariable names can contain both letters and numbers, but they cannot start with a number\n“Variable names can start with an underscore character, but we generally avoid doing this unless we are writing library code”\n“It’s a good idea to begin variable names with a lowercase letter”\nPython reserves 33 key words, such as and, if, True, def\n“A statement is a unit of code that the Python interpreter can execute”\nexponentiation operator: **, e.g. 3 ** 2 equals 9\nmodulus operator: %, e.g. 12 % 7 returns 5; quotient operator: //, e.g. 12 // 7 returns 1\n# is for commenting out\nA module is a collection of variables and functions.\n\nCh 3 Conditional execution\n\nBoolean expressions: x == y, x != y, x &gt; y, x &lt; y, x &gt;= y, x &lt;= y, x is y, x is not y\nLogical operators: and, or, not\nAny nonzero number is interpreted as True\nConditional execution: using if, else, elif — Don’t forget “:”\nUse try : and except :\n# case 1\nif sth :\n   execution statement\n\n# case 2\nif sth :\n   ...\nelse :\n   ...\n\n# case 3\nif sth :\n   ...\nelif sth :\n   ...\nelif sth :\n   ...\nelse :\n   ...\n\n# case 4\nif sth :\n   ...\nelif sth :\n   ...\nelif sth :\n   ...\n\nCh 4 Functions\n def func_name(arg_1, arg_2) :\n     body of the function\n\n“A function is named sequence of statements that performs a computation.”\nExamples of built-in functions: type, max, min, len, int, str\nExample functions in random module: random.random(), random.randint(), random.choice()\nExample functions in math module: math.log10(), math.sin()\nfruitful function has return statement at the end; void function does not have return statement or has statement return None\n\nCh 5 Iterations\n# example 1\ns = '1234567890'\nfor i in range(10) :\n  print(s[i])\n\n# example 2\nthe_nbrs = [1, 2, 3, 4, 5, -1, 6, 7, 8, 9, -2, -5, 10]\nt = 0\nfor a in the_nbrs :\n  if a &lt; 0 :\n      continue\n  t = t + a\nprint(\"The total of positive number is: \", t)\n\n# example 3\na_list = list()\nwhile True :\n  my_input = input(\"Enter a letter :\")\n  if my_input == 'z' :\n      break\n  a_list.append(my_input)\nprint(a_list)\nCh 6 Strings\n\n“A string is a sequence of characters. We can access the characters one at a time with the bracket operator.”\nTo have length, we use the function len()\nThe index of a string s ranges from 0 to len(s) - 1\nString slice: s[m:n] returns s[m], s[m+1], ..., s[n-1]. If m &gt;= n, then returns an empty string (a string with length 0). s[:n] returns s[0], ..., s[n-1]. s[m:] returns s[m], ..., s[len(s) - 1]. s[-1] returns s[len(s) - 1]. s[:] returns the whole string.\nEmpty string: a string with no character and length 0, represented by two quotation marks. Example: s = \"\". In this case, we cannot do s[0]\nStrings are immutable, that is, s = \"apple\", you cannot do s[0] = b.\n\"a\" in \"apple\" returns True, that is, in is a boolean operator that takes two strings and return True if the first appears as a sub-string in the second.\nThe comparison operators (e.g ‘==’, ‘&gt;’ and ‘&lt;=’) work on strings.\nString methods: dir(a_string) lists the methods; we use help(str.upper) to get help on a method (e.g. upper) for string.\nExample: s = 'apple', new_string = s.upper() Now new_string is ‘APPLE’.\nExample: line = \"  here we go  \", line.strip() gives “here we go”\nFormat operator: When applied to integers, % is the modulus operator. But when the first operand is a string, % is the format operator.\nExample: monkey = 45; \"%d\" % monkey gives string \"45\"\nExample: \"In %d years I have spotted %g %s\" % (3, 2.5, 'houses!') gives a string: “In 3 years I have spotted 2.5 houses!”\n\ns_1 = 'abce'\ns_2 = 'lmno'\ns_3 = s_1 + s_2 # 'abcelmno'\ns = \"\" # empty string\nprint(s[0]) # IndexError: string index out of range\nCh 7 Files\n\nOpen a file: f_handle = open(\"file_name\")\n\\n is a character\nReading files line by line:\nf_handle = open(\"file_name\")\ncount = 0\nfor line in f_handle :\n    count = count + 1\nprint('Line count:', count)\nIf you know the file is relatively small compared with the size of main memory, then you can read the whole file into one string using the method read:\nf_handle = open(\"file_name\")\na_string = f_handle.read()\nprint(len(a_string))\nSearching trough a file:\nf_handle = open(\"file_name\")\nfor line in f_handle :\n    if line.startswith('From:') :\n        line = line.rstrip() # to strip '\\n' and white space from the right\n        print(line)    \nUsing try and except\nf_name = input(\"Enter the file name: \")\ntry :\n    f_handle = open(f_name)\nexcept :\n    message = \"%s cannot be opened!\" % f_name\n    print(message)\nWriting files:\nf_handle = open(\"output.txt\", 'w')\nline_1 = \"This is a line for testing.\\n\"\nf_handle.write(line_1)\nline_2 = \"The second line for testing.\\n\"\nf_handle.write(line_2)\nf_handle.close\nIMPORTANT: If the file already exists, opening it in write mode clears out the old data and starts fresh, so be careful! If the file does not exist, a new one is created.\n\nCh 8 Lists\n\na list is a sequence of values\nmy_list = [1, 2, 3, 'apple', 'banana', ['hello', 'world']]\nempty_list = []\nIn a string, the values are characters; in a list, they can be any type.\nUnlike strings, lists are mutable because you can change the order of items in a list or reassign an item in a list.\nrange(n) returns a list of indices from 0 to n-1\nList operations\na = [1, 2, 3]\nb = [4, 5]\nc = a + b # returns [1, 2, 3, 4, 5]\nd = b * 2 # returns [4, 5, 4, 5]\na_list.sort() arranges the elements of the list from low to high (NB: a_list has been modified)\nnew_list = sorted(a_list) returns a new list, where the elements are the same in a_list but in order from low to high\nDeleting elements\na_list = ['a', 'b', 'c', 'd', 'e', 'f']\ndel a_list[1:5] # now a_list becomes ['a', 'f'] --- note the slice operator [1:5]\nA string is a sequence of characters and a list is a sequence of values, but a list of characters is not the same as a string. To convert from a string to a list of character, we can do list(a_string)\nThe list function breaks a string into individual letters. If we want to break a string into words, we use split method\nIt is important to distinguish between operations that modify lists and operations that create new lists. For example, append method modifies a list, but the + operator creates a new list.\nIf we want to use a method like sort that modifies the argument, but we need to keep the original list as well, we can make a copy:\norig = t[:]\nt.sort()\nList of tuple\n# Example: list of tuple\na_dic = {'a': 1, 'b': 2, 'c': 3}\nmy_list = list()\nfor key, value in list(a_dic.items()) :\n    my_list.append((value, key))\nprint(my_list)    \n\nCh 9 Dictionaries\n\nIn a dictionary, the indices can be (almost) any type. In a list, the indices must be integers (starting from 0).\nDictiary: a list of key-value pairs\nExample:\nempty_dic = dict()\neng2spanish = {'one': 'uno', 'two': 'dos', 'three': 'tres'}\npirnt(eng2spanish.keys()) # keys\nprint(eng2spanish.values()) # values\nThe order of items in a dictionary is unpredictable.\nThe len works on dictionaries.\nThe in works on dictionaries; it tells you whether something appears as a key in the dictionary\nlist(a_dict.values()) returns a list, that contains dic_values in it\nusing a_dic.get(a_key_value, a_default_value) : if the a_key_value appears in the dictionary then return the corresponding value; otherwise it the returns the default value\nOne of the common uses of a dictionary is to count the occurrence of words in a text file.\nmy_counter = dict()\nf_handle = open(\"a_text.text\")\nfor line in f_handle :\n    line = line.rstrip()\n    words = line.split()\n    for w in words :\n        my_counter[w] = my_counter.get(w, 0) + 1\nprint(my_counter)\nline.translate(line.maketrans(fromstr, tostr, deletestr))\nline = line.translate(line.maketrans('', '', string.punctuation)) # remove punctuation\nline = line.lower() # lower case\nwords = line.split() # words\n\nCh 10 Tuples\n\nA tuple: t = (1, 23, 'a', 'b', [1, 2, 3]).\nTuples are immutable.\nTuples are comparable and hashable so we can sort lists of them and use tuples as key values in Python dictionaries.\nA tuple with a singl element: t = ('a', ) — there must be a comma!\nswap values in two variables:\na = 5\nb = 8\nprint(a, b)\n(a, b) = (b, a)\nprint(a, b)\nlist(a_dic.items()) returns a list of tuples, where the elements are the key-value pairs.\na_dic = {'c': 10, 'a': 20, 'b': 30}\nL = list(a_dic.items())\nprint(L)\nL.sort()\nprint(L)\nusing two variables in for loop\nd = {'a': 10, 'b': 20, 'c': 0}\nL = list()\nfor key, val in d.items() :\n  L.append((val, key))\nL.sort(reverse = True)\nprint(L)\nusing tuples as keys in dictionaries\ndirectory = dict()\ndirectory[last_name, first_name] = tel_nbr\n\nfor last, first in directory :\n  print(first, last, dirctory[last, first])\nIf we are passing a sequence as an argument to a function, using tuples reduces the potential for unexpected behavior due to aliasing.\nlist []; dictionary {}; tuple ()\nAn example:\nd = {'a': 1, 'b': 2, 'c': 3}\nlist(d.keys()) # a list of characters, ['a', 'b', 'c']\nlist(d.values()) # a list of numbers, [1, 2, 3]\nlist(d.items()) # a list of tuples [('a', 1), ('b', 2), ('c', 3)]\n\nCh 11 Regular expressions\n\nUsing library/module re\nimport re\ns = 'ioewr987hjfowijrw;ofisopyuh3we'\nif re.search('[0-9]', s) :\n  print(\"a number found\")\nre.findall(\"([0-9]+)\", s) # return a list\n\nCh 12, 13 Network programming (mostly skipped)\nCh 14 Object oriented programming\nCh 15 Database (mostly skipped)\nCh 16 Applications (mostly skipped)",
+    "text": "1.1 Introduction to Computer and computer languages (Ch 1)",
+    "crumbs": [
+      "Part I Basics",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Summary of *PY4E*</span>"
+    ]
+  },
+  {
+    "objectID": "summaryBook.html#introduction-to-computer-and-computer-languages-ch-1",
+    "href": "summaryBook.html#introduction-to-computer-and-computer-languages-ch-1",
+    "title": "1  Summary of PY4E",
+    "section": "",
+    "text": "computer: Input/output devices; CPU; main memory (RAM); secondary memory; network\nmachine language; low level language; high level language\n“The Python interpreter is written in a high-level language called ‘C’.”\n“Python scripts have names end with .py”\nImportant concepts: input and output; sequential execution, conditional execution, and repeated execution; reuse.\nThree general types of errors: syntax errors, logic errors, and semantic errors (the code runs without producting an error message, but it does not do the “right” thing.)",
+    "crumbs": [
+      "Part I Basics",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Summary of *PY4E*</span>"
+    ]
+  },
+  {
+    "objectID": "summaryBook.html#variables-expressions-and-statements-ch-2",
+    "href": "summaryBook.html#variables-expressions-and-statements-ch-2",
+    "title": "1  Summary of PY4E",
+    "section": "1.2 Variables, expressions and statements (Ch 2)",
+    "text": "1.2 Variables, expressions and statements (Ch 2)\n\nPython is case sensitive, that is, A is different from a\nVariable names can contain both letters and numbers, but they cannot start with a number\n“Variable names can start with an underscore character, but we generally avoid doing this unless we are writing library code”\n“It’s a good idea to begin variable names with a lowercase letter”\nPython reserves 33 key words, such as and, if, True, def\n“A statement is a unit of code that the Python interpreter can execute”\nexponentiation operator: **, e.g. 3 ** 2 equals 9\nmodulus operator: %, e.g. 12 % 7 returns 5; quotient operator: //, e.g. 12 // 7 returns 1\n# is for commenting out\nA module is a collection of variables and functions.",
+    "crumbs": [
+      "Part I Basics",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Summary of *PY4E*</span>"
+    ]
+  },
+  {
+    "objectID": "summaryBook.html#conditional-execution-ch-3",
+    "href": "summaryBook.html#conditional-execution-ch-3",
+    "title": "1  Summary of PY4E",
+    "section": "1.3 Conditional execution (Ch 3)",
+    "text": "1.3 Conditional execution (Ch 3)\n\nBoolean expressions: x == y, x != y, x &gt; y, x &lt; y, x &gt;= y, x &lt;= y, x is y, x is not y\nLogical operators: and, or, not\nAny nonzero number is interpreted as True\nConditional execution: using if, else, elif — Don’t forget “:”\nUse try : and except :\n# case 1\nif sth :\n   execution statement\n\n# case 2\nif sth :\n   ...\nelse :\n   ...\n\n# case 3\nif sth :\n   ...\nelif sth :\n   ...\nelif sth :\n   ...\nelse :\n   ...\n\n# case 4\nif sth :\n   ...\nelif sth :\n   ...\nelif sth :\n   ...",
+    "crumbs": [
+      "Part I Basics",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Summary of *PY4E*</span>"
+    ]
+  },
+  {
+    "objectID": "summaryBook.html#functions-ch-4",
+    "href": "summaryBook.html#functions-ch-4",
+    "title": "1  Summary of PY4E",
+    "section": "1.4 Functions (Ch 4)",
+    "text": "1.4 Functions (Ch 4)\n def func_name(arg_1, arg_2) :\n     body of the function\n \n\n“A function is named sequence of statements that performs a computation.”\nExamples of built-in functions: type, max, min, len, int, str\nExample functions in random module: random.random(), random.randint(), random.choice()\nExample functions in math module: math.log10(), math.sin()\nfruitful function has return statement at the end; void function does not have return statement or has statement return None",
+    "crumbs": [
+      "Part I Basics",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Summary of *PY4E*</span>"
+    ]
+  },
+  {
+    "objectID": "summaryBook.html#iterations-ch-5",
+    "href": "summaryBook.html#iterations-ch-5",
+    "title": "1  Summary of PY4E",
+    "section": "1.5 Iterations (Ch 5)",
+    "text": "1.5 Iterations (Ch 5)\n# example 1\ns = '1234567890'\nfor i in range(10) :\n  print(s[i])\n\n# example 2\nthe_nbrs = [1, 2, 3, 4, 5, -1, 6, 7, 8, 9, -2, -5, 10]\nt = 0\nfor a in the_nbrs :\n  if a &lt; 0 :\n      continue\n  t = t + a\nprint(\"The total of positive number is: \", t)\n\n# example 3\na_list = list()\nwhile True :\n  my_input = input(\"Enter a letter :\")\n  if my_input == 'z' :\n      break\n  a_list.append(my_input)\nprint(a_list)",
+    "crumbs": [
+      "Part I Basics",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Summary of *PY4E*</span>"
+    ]
+  },
+  {
+    "objectID": "summaryBook.html#strings-ch-6",
+    "href": "summaryBook.html#strings-ch-6",
+    "title": "1  Summary of PY4E",
+    "section": "1.6 Strings (Ch 6)",
+    "text": "1.6 Strings (Ch 6)\n\n“A string is a sequence of characters. We can access the characters one at a time with the bracket operator.”\nTo have length, we use the function len()\nThe index of a string s ranges from 0 to len(s) - 1\nString slice: s[m:n] returns s[m], s[m+1], ..., s[n-1]. If m &gt;= n, then returns an empty string (a string with length 0). s[:n] returns s[0], ..., s[n-1]. s[m:] returns s[m], ..., s[len(s) - 1]. s[-1] returns s[len(s) - 1]. s[:] returns the whole string.\nEmpty string: a string with no character and length 0, represented by two quotation marks. Example: s = \"\". In this case, we cannot do s[0]\nStrings are immutable, that is, s = \"apple\", you cannot do s[0] = b.\n\"a\" in \"apple\" returns True, that is, in is a boolean operator that takes two strings and return True if the first appears as a sub-string in the second.\nThe comparison operators (e.g ‘==’, ‘&gt;’ and ‘&lt;=’) work on strings.\nString methods: dir(a_string) lists the methods; we use help(str.upper) to get help on a method (e.g. upper) for string.\nExample: s = 'apple', new_string = s.upper() Now new_string is ‘APPLE’.\nExample: line = \"  here we go  \", line.strip() gives “here we go”\nFormat operator: When applied to integers, % is the modulus operator. But when the first operand is a string, % is the format operator.\nExample: monkey = 45; \"%d\" % monkey gives string \"45\"\nExample: \"In %d years I have spotted %g %s\" % (3, 2.5, 'houses!') gives a string: “In 3 years I have spotted 2.5 houses!”\ns_1 = 'abce'\ns_2 = 'lmno'\ns_3 = s_1 + s_2 # 'abcelmno'\ns = \"\" # empty string\nprint(s[0]) # IndexError: string index out of range",
+    "crumbs": [
+      "Part I Basics",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Summary of *PY4E*</span>"
+    ]
+  },
+  {
+    "objectID": "summaryBook.html#files-ch-7",
+    "href": "summaryBook.html#files-ch-7",
+    "title": "1  Summary of PY4E",
+    "section": "1.7 Files (Ch 7)",
+    "text": "1.7 Files (Ch 7)\n\nOpen a file: f_handle = open(\"file_name\")\n\\n is a character\nReading files line by line: python     f_handle = open(\"file_name\")     count = 0     for line in f_handle :         count = count + 1     print('Line count:', count)\nIf you know the file is relatively small compared with the size of main memory, then you can read the whole file into one string using the method read: python     f_handle = open(\"file_name\")     a_string = f_handle.read()     print(len(a_string))\nSearching trough a file: python     f_handle = open(\"file_name\")     for line in f_handle :         if line.startswith('From:') :             line = line.rstrip() # to strip '\\n' and white space from the right             print(line)\nUsing try and except python     f_name = input(\"Enter the file name: \")     try :         f_handle = open(f_name)     except :         message = \"%s cannot be opened!\" % f_name         print(message)\nWriting files: python     f_handle = open(\"output.txt\", 'w')     line_1 = \"This is a line for testing.\\n\"     f_handle.write(line_1)     line_2 = \"The second line for testing.\\n\"     f_handle.write(line_2)     f_handle.close IMPORTANT: If the file already exists, opening it in write mode clears out the old data and starts fresh, so be careful! If the file does not exist, a new one is created.",
+    "crumbs": [
+      "Part I Basics",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Summary of *PY4E*</span>"
+    ]
+  },
+  {
+    "objectID": "summaryBook.html#lists-ch-8",
+    "href": "summaryBook.html#lists-ch-8",
+    "title": "1  Summary of PY4E",
+    "section": "1.8 Lists (Ch 8)",
+    "text": "1.8 Lists (Ch 8)\n\na list is a sequence of values\nmy_list = [1, 2, 3, 'apple', 'banana', ['hello', 'world']]\nempty_list = []\nIn a string, the values are characters; in a list, they can be any type.\nUnlike strings, lists are mutable because you can change the order of items in a list or reassign an item in a list.\nrange(n) returns a list of indices from 0 to n-1\nList operations\na = [1, 2, 3]\nb = [4, 5]\nc = a + b # returns [1, 2, 3, 4, 5]\nd = b * 2 # returns [4, 5, 4, 5]\na_list.sort() arranges the elements of the list from low to high (NB: a_list has been modified)\nnew_list = sorted(a_list) returns a new list, where the elements are the same in a_list but in order from low to high\nDeleting elements\na_list = ['a', 'b', 'c', 'd', 'e', 'f']\ndel a_list[1:5] # now a_list becomes ['a', 'f'] --- note the slice operator [1:5]\nA string is a sequence of characters and a list is a sequence of values, but a list of characters is not the same as a string. To convert from a string to a list of character, we can do list(a_string)\nThe list function breaks a string into individual letters. If we want to break a string into words, we use split method\nIt is important to distinguish between operations that modify lists and operations that create new lists. For example, append method modifies a list, but the + operator creates a new list.\nIf we want to use a method like sort that modifies the argument, but we need to keep the original list as well, we can make a copy:\norig = t[:]\nt.sort()\nList of tuple python     # Example: list of tuple     a_dic = {'a': 1, 'b': 2, 'c': 3}     my_list = list()     for key, value in list(a_dic.items()) :         my_list.append((value, key))     print(my_list)",
+    "crumbs": [
+      "Part I Basics",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Summary of *PY4E*</span>"
+    ]
+  },
+  {
+    "objectID": "summaryBook.html#dictionaries-ch-9",
+    "href": "summaryBook.html#dictionaries-ch-9",
+    "title": "1  Summary of PY4E",
+    "section": "1.9 Dictionaries (Ch 9)",
+    "text": "1.9 Dictionaries (Ch 9)\n\nIn a dictionary, the indices can be (almost) any type. In a list, the indices must be integers (starting from 0).\nDictiary: a list of key-value pairs\nExample: python     empty_dic = dict()     eng2spanish = {'one': 'uno', 'two': 'dos', 'three': 'tres'}     pirnt(eng2spanish.keys()) # keys     print(eng2spanish.values()) # values\nThe order of items in a dictionary is unpredictable.\nThe len works on dictionaries.\nThe in works on dictionaries; it tells you whether something appears as a key in the dictionary\nlist(a_dict.values()) returns a list, that contains dic_values in it\nusing a_dic.get(a_key_value, a_default_value) : if the a_key_value appears in the dictionary then return the corresponding value; otherwise it the returns the default value\nOne of the common uses of a dictionary is to count the occurrence of words in a text file. python     my_counter = dict()     f_handle = open(\"a_text.text\")     for line in f_handle :         line = line.rstrip()         words = line.split()         for w in words :             my_counter[w] = my_counter.get(w, 0) + 1     print(my_counter)\nline.translate(line.maketrans(fromstr, tostr, deletestr)) python     line = line.translate(line.maketrans('', '', string.punctuation)) # remove punctuation     line = line.lower() # lower case     words = line.split() # words",
+    "crumbs": [
+      "Part I Basics",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Summary of *PY4E*</span>"
+    ]
+  },
+  {
+    "objectID": "summaryBook.html#tuples-ch-10",
+    "href": "summaryBook.html#tuples-ch-10",
+    "title": "1  Summary of PY4E",
+    "section": "1.10 Tuples (Ch 10)",
+    "text": "1.10 Tuples (Ch 10)\n\nA tuple: t = (1, 23, 'a', 'b', [1, 2, 3]).\nTuples are immutable.\nTuples are comparable and hashable so we can sort lists of them and use tuples as key values in Python dictionaries.\nA tuple with a singl element: t = ('a', ) — there must be a comma!\nswap values in two variables: python     a = 5     b = 8     print(a, b)     (a, b) = (b, a)     print(a, b)\nlist(a_dic.items()) returns a list of tuples, where the elements are the key-value pairs.\na_dic = {'c': 10, 'a': 20, 'b': 30}\nL = list(a_dic.items())\nprint(L)\nL.sort()\nprint(L)\nusing two variables in for loop python     d = {'a': 10, 'b': 20, 'c': 0}     L = list()     for key, val in d.items() :       L.append((val, key))     L.sort(reverse = True)     print(L)\nusing tuples as keys in dictionaries ```python directory = dict() directory[last_name, first_name] = tel_nbr\nfor last, first in directory : print(first, last, dirctory[last, first]) ```\nIf we are passing a sequence as an argument to a function, using tuples reduces the potential for unexpected behavior due to aliasing.\nlist []; dictionary {}; tuple ()\nAn example: python     d = {'a': 1, 'b': 2, 'c': 3}     list(d.keys()) # a list of characters, ['a', 'b', 'c']     list(d.values()) # a list of numbers, [1, 2, 3]     list(d.items()) # a list of tuples [('a', 1), ('b', 2), ('c', 3)]",
+    "crumbs": [
+      "Part I Basics",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Summary of *PY4E*</span>"
+    ]
+  },
+  {
+    "objectID": "summaryBook.html#regular-expressions-ch-11",
+    "href": "summaryBook.html#regular-expressions-ch-11",
+    "title": "1  Summary of PY4E",
+    "section": "1.11 Regular expressions (Ch 11)",
+    "text": "1.11 Regular expressions (Ch 11)\n\nUsing library/module re python     import re     s = 'ioewr987hjfowijrw;ofisopyuh3we'     if re.search('[0-9]', s) :       print(\"a number found\")     re.findall(\"([0-9]+)\", s) # return a list",
+    "crumbs": [
+      "Part I Basics",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Summary of *PY4E*</span>"
+    ]
+  },
+  {
+    "objectID": "summaryBook.html#network-programming-ch-12-13-mostly-skipped",
+    "href": "summaryBook.html#network-programming-ch-12-13-mostly-skipped",
+    "title": "1  Summary of PY4E",
+    "section": "1.12 Network programming (Ch 12, 13, mostly skipped)",
+    "text": "1.12 Network programming (Ch 12, 13, mostly skipped)",
+    "crumbs": [
+      "Part I Basics",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Summary of *PY4E*</span>"
+    ]
+  },
+  {
+    "objectID": "summaryBook.html#object-oriented-programming-ch-14",
+    "href": "summaryBook.html#object-oriented-programming-ch-14",
+    "title": "1  Summary of PY4E",
+    "section": "1.13 Object oriented programming (Ch 14)",
+    "text": "1.13 Object oriented programming (Ch 14)",
+    "crumbs": [
+      "Part I Basics",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Summary of *PY4E*</span>"
+    ]
+  },
+  {
+    "objectID": "summaryBook.html#database-ch-15-mostly-skipped",
+    "href": "summaryBook.html#database-ch-15-mostly-skipped",
+    "title": "1  Summary of PY4E",
+    "section": "1.14 Database (Ch 15, mostly skipped)",
+    "text": "1.14 Database (Ch 15, mostly skipped)",
+    "crumbs": [
+      "Part I Basics",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Summary of *PY4E*</span>"
+    ]
+  },
+  {
+    "objectID": "summaryBook.html#applications-ch-16-mostly-skipped",
+    "href": "summaryBook.html#applications-ch-16-mostly-skipped",
+    "title": "1  Summary of PY4E",
+    "section": "1.15 Applications (Ch 16, mostly skipped)",
+    "text": "1.15 Applications (Ch 16, mostly skipped)",
     "crumbs": [
       "Part I Basics",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Summary of *PY4E*</span>"
@@ -288,45 +453,78 @@
   {
     "objectID": "numerical_computing.html",
     "href": "numerical_computing.html",
-    "title": "6  Numerical Computing",
+    "title": "6  Numerical Computing and Simulation",
     "section": "",
     "text": "6.1 Find number of digits\nProblem: Write a function, where the input is an integer and the output is the number of digits of this number.\n# Method 1\n\nfrom math import log, floor\ndef find_nbr_of_digits_1(an_int) :\n    try:\n        return floor(log(an_int, 10)) + 1\n    except :\n        return 1    \n\n## test\nprint(find_nbr_of_digits_1(12345))\nprint(find_nbr_of_digits_1(2 ** 10))\nprint(find_nbr_of_digits_1(0))\n\n5\n4\n1\n# Method 2\n\ndef find_nbr_of_digits_2(an_int) :\n    c = 0\n    while True :\n        an_int = an_int // 10\n        c = c + 1\n        if an_int == 0 :\n            break\n    return c\n\n## test\nprint(find_nbr_of_digits_2(12345))\nprint(find_nbr_of_digits_2(2 ** 10)) \nprint(find_nbr_of_digits_2(0))   \n\n5\n4\n1",
     "crumbs": [
       "Part II Examples",
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Numerical Computing</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Numerical Computing and Simulation</span>"
     ]
   },
   {
     "objectID": "numerical_computing.html#the-first-fibonacci-number-greater-than-m",
     "href": "numerical_computing.html#the-first-fibonacci-number-greater-than-m",
-    "title": "6  Numerical Computing",
+    "title": "6  Numerical Computing and Simulation",
     "section": "6.2 The first Fibonacci number greater than m",
     "text": "6.2 The first Fibonacci number greater than m\nProblem: Let F_n be the n-th Fibonacci number. Find n, such that F_n &gt; m, where m &gt;= 1.\n\ndef find_fibo_index(m) :\n    f1 = 1\n    f2 = 1\n    i = 2\n    if m == 1 :\n        return 1\n    else:\n        while True:\n            f = f1 + f2\n            i = i + 1\n            if f &gt; m :\n                break\n            f1 = f2\n            f2 = f\n        return i\n\n## test\nprint(find_fibo_index(10000))\nprint(find_fibo_index(1))\n\n21\n1",
     "crumbs": [
       "Part II Examples",
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Numerical Computing</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Numerical Computing and Simulation</span>"
     ]
   },
   {
     "objectID": "numerical_computing.html#long-division",
     "href": "numerical_computing.html#long-division",
-    "title": "6  Numerical Computing",
+    "title": "6  Numerical Computing and Simulation",
     "section": "6.3 Long division",
     "text": "6.3 Long division\nProblem: Find n / d, where both n and d are integers but d cannot be 0.\n\ndef long_div(n, d) :\n    q_list = list()\n    r_list = list()\n    # initial\n    q = n // d\n    r = n % d\n    q_list.append(q)\n    r_list.append(r)\n    if r == 0 :\n        return [[q, r], ['No repeat']]\n    else :\n        c = 0\n        while True :\n            n = 10 * r\n            q = n // d\n            r = n % d\n            q_list.append(q)\n            r_list.append(r)\n            c = c + 1\n            if (r in r_list[:c]) or r == 0 :\n                break\n        if r_list[-1] == 0 :\n            the_re = [q_list, ['No repeat']]\n        else :\n            m = len(r_list)\n            for i in range(m - 1) :\n                if r_list[i] == r_list[-1] :\n                    the_re = [q_list, {\"Repeat starts position\": i + 2}] \n                    break\n        return the_re\n\n## test\nprint(long_div(1, 2))\nprint(long_div(1, 3))\nprint(long_div(1, 6))\nprint(long_div(1, 7))\nprint(long_div(20, 2))\nprint(long_div(20, 3))\nprint(long_div(20, 6))\nprint(long_div(20, 7))\nprint(long_div(199, 23))\n\n[[0, 5], ['No repeat']]\n[[0, 3], {'Repeat starts position': 2}]\n[[0, 1, 6], {'Repeat starts position': 3}]\n[[0, 1, 4, 2, 8, 5, 7], {'Repeat starts position': 2}]\n[[10, 0], ['No repeat']]\n[[6, 6], {'Repeat starts position': 2}]\n[[3, 3], {'Repeat starts position': 2}]\n[[2, 8, 5, 7, 1, 4, 2], {'Repeat starts position': 2}]\n[[8, 6, 5, 2, 1, 7, 3, 9, 1, 3, 0, 4, 3, 4, 7, 8, 2, 6, 0, 8, 6, 9, 5], {'Repeat starts position': 2}]",
     "crumbs": [
       "Part II Examples",
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Numerical Computing</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Numerical Computing and Simulation</span>"
     ]
   },
   {
     "objectID": "numerical_computing.html#frequency-of-digits-in-a-large-number",
     "href": "numerical_computing.html#frequency-of-digits-in-a-large-number",
-    "title": "6  Numerical Computing",
+    "title": "6  Numerical Computing and Simulation",
     "section": "6.4 Frequency of digits in a large number",
     "text": "6.4 Frequency of digits in a large number\n\nimport matplotlib.pyplot as plt\n\ndef ordered_bar_plot(a, n) :\n    nbr = a ** n\n    s = str(nbr)\n    freq = dict()\n    \n    for ch in s :\n        freq[ch] = freq.get(ch, 0) + 1\n\n    li = list()\n    for key, value in list(freq.items()) :\n        li.append((value, key))\n    li.sort(reverse = True)\n\n    total_freq = sum(freq.values())\n    \n    new_d = dict()\n    for v, k in li :\n        new_d[k] = v / total_freq\n    \n    plt.bar(new_d.keys(), new_d.values(), color='g')\n    plt.xlabel('Digit')\n    plt.ylabel('Relative frequency')\n    plt.title('Distribution of digits in %d^%d' % (a, n))\n    plt.show()\n\n# test\nordered_bar_plot(2, 10000)\n\n\n\n\n\n\n\n\n\nfrom sys import set_int_max_str_digits\nset_int_max_str_digits(7000)\nordered_bar_plot(3, 10000)\n\n\n\n\n\n\n\n\n\nordered_bar_plot(5, 10000)",
     "crumbs": [
       "Part II Examples",
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Numerical Computing</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Numerical Computing and Simulation</span>"
+    ]
+  },
+  {
+    "objectID": "numerical_computing.html#recursive-programming",
+    "href": "numerical_computing.html#recursive-programming",
+    "title": "6  Numerical Computing and Simulation",
+    "section": "6.5 Recursive programming",
+    "text": "6.5 Recursive programming\n\n# Example: Factorial\ndef my_factorial(n) :\n    if n == 0 :\n        return 1\n    else :\n        return n * my_factorial(n - 1)\n## test\nfor i in range(4) :\n    print(i, my_factorial(i))\nprint(10, my_factorial(10))\n\n0 1\n1 1\n2 2\n3 6\n10 3628800\n\n\n\n# Example: Tribonacci numbers --- https://oeis.org/A000073\ndef tribonacci(n) :\n    if n == 0 or n == 1 :\n        return 0\n    elif n == 2 :\n        return 1\n    else :\n        return tribonacci(n-1) + tribonacci(n-2) + tribonacci(n-3)\n\n## test\nfor i in range(6) :\n    print(i, tribonacci(i))\n        \n        \n\n0 0\n1 0\n2 1\n3 1\n4 2\n5 4",
+    "crumbs": [
+      "Part II Examples",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Numerical Computing and Simulation</span>"
+    ]
+  },
+  {
+    "objectID": "numerical_computing.html#simulation-of-coin-tosses",
+    "href": "numerical_computing.html#simulation-of-coin-tosses",
+    "title": "6  Numerical Computing and Simulation",
+    "section": "6.6 Simulation of coin tosses",
+    "text": "6.6 Simulation of coin tosses\n\n# Problem: Simulate N tosses of a fair coin and plot the relative frequencies\nimport numpy as np\nimport matplotlib.pyplot as plt\n\ndef simu_coin_tosses(N = 10000):\n    cum_re = [0] * N # cumulative results\n    prop_re = [0] * N\n    popu = np.arange(2) # array([0, 1])\n    the_sample = np.random.choice(popu, size = N, replace = True)\n    cum_re[0] = the_sample[0]\n    prop_re[0] = cum_re[0]\n    for i in range(1, N):\n        cum_re[i] = cum_re[i - 1] + the_sample[i]\n        prop_re[i] = cum_re[i] / (i + 1)\n    start = N//3       \n    x = np.arange(start, N)       \n    plt.plot(x, prop_re[start:N])\n    epsi = 1 / np.sqrt(N)\n    plt.axhline(0.5 - epsi, color = \"red\") # lower limit line\n    plt.axhline(0.5 + epsi, color = \"red\") # upper limit line\n    plt.xlabel(\"Number of tosses\")\n    plt.ylabel(\"Relative frequency of heads\")\n    plt.title(\"Simulation of tosses of a fair coin\")\n    plt.grid(True)\n    plt.show()\n\n## test\nsimu_coin_tosses(10000)\n\n\n\n\n\n\n\n\n\nsimu_coin_tosses(10000)",
+    "crumbs": [
+      "Part II Examples",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Numerical Computing and Simulation</span>"
+    ]
+  },
+  {
+    "objectID": "numerical_computing.html#birthday-problem",
+    "href": "numerical_computing.html#birthday-problem",
+    "title": "6  Numerical Computing and Simulation",
+    "section": "6.7 Birthday problem",
+    "text": "6.7 Birthday problem\n\n# Problem: Find the the answer to the birthday problem (https://en.wikipedia.org/wiki/Birthday_problem) by simulation.\nimport numpy as np\n\ndef simu_birthday_problem(N = 10000, people_number = 23):\n    indicator = [0] * N\n    a = np.arange(365) # array([0, 1, ..., 364])\n    for i in range(N):\n        a_sample = np.random.choice(a, size = people_number, replace = True)\n        b = set(a_sample)\n        if len(a_sample) &gt; len(b):\n            indicator[i] = 1\n    the_result = sum(indicator) / N\n    return the_result # accuray: truth +- 0.01 with 95% confidence\n\n## test\nfor i in range(5) :\n    print(simu_birthday_problem(10000, 23))\n\n0.5043\n0.5009\n0.5119\n0.5025\n0.5001",
+    "crumbs": [
+      "Part II Examples",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Numerical Computing and Simulation</span>"
     ]
   },
   {
@@ -356,7 +554,7 @@
     "href": "index.html",
     "title": "My Learning Python Notes",
     "section": "",
-    "text": "Preface\nThe why, what and how questions. I wanted to learn Python. As with many things I do, I first asked myself the following questions:\n\nWhy learn Python?\nWhat should I learn?\nHow should I learn it?\n\nAmong these three, I think the easiest question to answer was the third one. My answer: by reading the books Python for Everybody and Think Python. While reading, I took notes and completed some exercises.\nAs for the why question, I had a vague answer: Python is a general-purpose language, and it’s useful.\nFor the what question, my answer was that I want to use python in the numerical computing, text mining and other areas.\nThis book has three parts:\n\nBasics\nExamples in\n\nnumerical computing\ntext mining\nother\n\nTips",
+    "text": "Preface\nThe why, what and how questions. I wanted to learn Python. As with many things I do, I first asked myself the following questions:\n\nWhy learn Python?\nWhat should I learn?\nHow should I learn it?\n\nAmong these three, I think the easiest question to answer was the third one. My answer: by reading the books Python for Everybody and Think Python. While reading, I took notes and completed some exercises.\nAs for the why question, I had a vague answer: Python is a general-purpose language, and it’s useful.\nFor the what question, my answer was that I want to use python in the numerical computing and simulation, text mining and other areas.\nThis book has three parts:\n\nBasics\nExamples in\n\nnumerical computing and simulation\ntext mining\nother\n\nTips",
     "crumbs": [
       "Preface"
     ]

@@ -10,14 +10,14 @@ Among these three, I think the easiest question to answer was the third one. My 
 
 As for the *why* question, I had a vague answer: Python is a general-purpose language, and it's useful.
 
-For the *what* question, my answer was that I want to use python in the **numerical computing**, **text mining** and other areas.
+For the *what* question, my answer was that I want to use python in the **numerical computing and simulation**, **text mining** and other areas.
 
 
 This book has three parts:
 
 1. Basics
 1. Examples in 
-    - numerical computing 
+    - numerical computing and simulation
     - text mining 
     - other 
 1. Tips
