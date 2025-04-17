@@ -557,7 +557,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="birthday-problem" class="level2" data-number="6.7">
 <h2 data-number="6.7" class="anchored" data-anchor-id="birthday-problem"><span class="header-section-number">6.7</span> Birthday problem</h2>
-<div id="cell-18" class="cell" data-execution_count="15">
+<div id="cell-18" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Problem: Find the the answer to the birthday problem (https://en.wikipedia.org/wiki/Birthday_problem) by simulation.</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -570,17 +570,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="bu">len</span>(a_sample) <span class="op">&gt;</span> <span class="bu">len</span>(b):</span>
 <span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>            indicator[i] <span class="op">=</span> <span class="dv">1</span></span>
 <span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>    the_result <span class="op">=</span> <span class="bu">sum</span>(indicator) <span class="op">/</span> N</span>
-<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> the_result <span class="co"># accuray: truth +- 0.01 with 95% confidence</span></span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> the_result <span class="co"># accuracy: +- 0.01 with 95% confidence</span></span>
 <span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a><span class="co">## test</span></span>
 <span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>) :</span>
 <span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(simu_birthday_problem(<span class="dv">10000</span>, <span class="dv">23</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>0.5043
-0.5009
-0.5119
-0.5025
-0.5001</code></pre>
+<pre><code>0.5046
+0.5064
+0.5106
+0.5033
+0.4961</code></pre>
 </div>
 </div>
 
