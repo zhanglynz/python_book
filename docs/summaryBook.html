@@ -231,7 +231,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#introduction-to-computer-and-computer-languages-ch-1" id="toc-introduction-to-computer-and-computer-languages-ch-1" class="nav-link active" data-scroll-target="#introduction-to-computer-and-computer-languages-ch-1"><span class="header-section-number">1.1</span> Introduction to Computer and computer languages (Ch 1)</a></li>
+  <li><a href="#intro.-to-computer-and-computer-languages-ch-1" id="toc-intro.-to-computer-and-computer-languages-ch-1" class="nav-link active" data-scroll-target="#intro.-to-computer-and-computer-languages-ch-1"><span class="header-section-number">1.1</span> Intro. to Computer and computer languages (Ch 1)</a></li>
   <li><a href="#variables-expressions-and-statements-ch-2" id="toc-variables-expressions-and-statements-ch-2" class="nav-link" data-scroll-target="#variables-expressions-and-statements-ch-2"><span class="header-section-number">1.2</span> Variables, expressions and statements (Ch 2)</a></li>
   <li><a href="#conditional-execution-ch-3" id="toc-conditional-execution-ch-3" class="nav-link" data-scroll-target="#conditional-execution-ch-3"><span class="header-section-number">1.3</span> Conditional execution (Ch 3)</a></li>
   <li><a href="#functions-ch-4" id="toc-functions-ch-4" class="nav-link" data-scroll-target="#functions-ch-4"><span class="header-section-number">1.4</span> Functions (Ch 4)</a></li>
@@ -272,8 +272,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p>I have studied <em>Python for Everybody: Exploring Data Using Python 3</em> by Charles R. Severance, and here I write down a <strong>Summary</strong>.</p>
-<section id="introduction-to-computer-and-computer-languages-ch-1" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="introduction-to-computer-and-computer-languages-ch-1"><span class="header-section-number">1.1</span> Introduction to Computer and computer languages (Ch 1)</h2>
+<section id="intro.-to-computer-and-computer-languages-ch-1" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="intro.-to-computer-and-computer-languages-ch-1"><span class="header-section-number">1.1</span> Intro. to Computer and computer languages (Ch 1)</h2>
 <ul>
 <li>computer: Input/output devices; CPU; main memory (RAM); secondary memory; network</li>
 <li>machine language; low level language; high level language</li>
@@ -305,7 +305,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>Logical operators: <code>and</code>, <code>or</code>, <code>not</code></p></li>
 <li><p>Any nonzero number is interpreted as <code>True</code></p></li>
 <li><p>Conditional execution: using <code>if</code>, <code>else</code>, <code>elif</code> — <strong>Don’t forget “:”</strong></p></li>
-<li><p>Use <code>try :</code> and <code>except :</code></p>
+<li><p>Use <code>try :</code> and <code>except :</code></p></li>
+<li><p>Use <code>if</code> cases:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># case 1</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> sth :</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>   execution statement</span>
@@ -337,9 +338,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="functions-ch-4" class="level2" data-number="1.4">
 <h2 data-number="1.4" class="anchored" data-anchor-id="functions-ch-4"><span class="header-section-number">1.4</span> Functions (Ch 4)</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a> <span class="kw">def</span> func_name(arg_1, arg_2) :</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>     body of the function</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> func_name(arg_1, arg_2) : </span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    body of the function</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li>“A <em>function</em> is named sequence of statements that performs a computation.”</li>
 <li>Examples of built-in functions: <code>type</code>, <code>max</code>, <code>min</code>, <code>len</code>, <code>int</code>, <code>str</code></li>
@@ -400,56 +400,103 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="files-ch-7" class="level2" data-number="1.7">
 <h2 data-number="1.7" class="anchored" data-anchor-id="files-ch-7"><span class="header-section-number">1.7</span> Files (Ch 7)</h2>
 <ul>
-<li>Open a file: <code>f_handle = open("file_name")</code></li>
-<li><code>\n</code> is <strong>a character</strong></li>
-<li>Reading files line by line: <code>python     f_handle = open("file_name")     count = 0     for line in f_handle :         count = count + 1     print('Line count:', count)</code></li>
-<li>If you know the file is relatively small compared with the size of main memory, then you can read the whole file into one string using the method <code>read</code>: <code>python     f_handle = open("file_name")     a_string = f_handle.read()     print(len(a_string))</code></li>
-<li>Searching trough a file: <code>python     f_handle = open("file_name")     for line in f_handle :         if line.startswith('From:') :             line = line.rstrip() # to strip '\n' and white space from the right             print(line)</code></li>
-<li>Using <code>try</code> and <code>except</code> <code>python     f_name = input("Enter the file name: ")     try :         f_handle = open(f_name)     except :         message = "%s cannot be opened!" % f_name         print(message)</code></li>
-<li>Writing files: <code>python     f_handle = open("output.txt", 'w')     line_1 = "This is a line for testing.\n"     f_handle.write(line_1)     line_2 = "The second line for testing.\n"     f_handle.write(line_2)     f_handle.close</code> <strong>IMPORTANT: If the file already exists, opening it in write mode clears out the old data and starts fresh, so be careful! If the file does not exist, a new one is created.</strong></li>
+<li><p>Open a file: <code>f_handle = open("file_name")</code></p></li>
+<li><p><code>\n</code> is <strong>a character</strong></p></li>
+<li><p>Reading files line by line:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>f_handle <span class="op">=</span> <span class="bu">open</span>(<span class="st">"file_name"</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>count <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> line <span class="kw">in</span> f_handle :</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    count <span class="op">=</span> count <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Line count:'</span>, count)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>If you know the file is relatively small compared with the size of main memory, then you can read the whole file into one string using the method <code>read</code>:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>f_handle <span class="op">=</span> <span class="bu">open</span>(<span class="st">"file_name"</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>a_string <span class="op">=</span> f_handle.read()</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">len</span>(a_string))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Searching trough a file:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>f_handle <span class="op">=</span> <span class="bu">open</span>(<span class="st">"file_name"</span>)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> line <span class="kw">in</span> f_handle :</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>   <span class="cf">if</span> line.startswith(<span class="st">'From:'</span>) :</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>      line <span class="op">=</span> line.rstrip() <span class="co"># to strip '\n' and white space from the right</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>      <span class="bu">print</span>(line)    </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Using <code>try</code> and <code>except</code></p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>f_name <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Enter the file name: "</span>)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span> :</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    f_handle <span class="op">=</span> <span class="bu">open</span>(f_name)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> :</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    message <span class="op">=</span> <span class="st">"</span><span class="sc">%s</span><span class="st"> cannot be opened!"</span> <span class="op">%</span> f_name</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(message)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Writing files:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>f_handle <span class="op">=</span> <span class="bu">open</span>(<span class="st">"output.txt"</span>, <span class="st">'w'</span>)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>line_1 <span class="op">=</span> <span class="st">"This is a line for testing.</span><span class="ch">\n</span><span class="st">"</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>f_handle.write(line_1)</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>line_2 <span class="op">=</span> <span class="st">"The second line for testing.</span><span class="ch">\n</span><span class="st">"</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>f_handle.write(line_2)</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>f_handle.close</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>IMPORTANT: If the file already exists, opening it in write mode clears out the old data and starts fresh, so be careful! If the file does not exist, a new one is created.</strong></p></li>
 </ul>
 </section>
 <section id="lists-ch-8" class="level2" data-number="1.8">
 <h2 data-number="1.8" class="anchored" data-anchor-id="lists-ch-8"><span class="header-section-number">1.8</span> Lists (Ch 8)</h2>
 <ul>
 <li><p>a <em>list</em> is a sequence of values</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>my_list <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="st">'apple'</span>, <span class="st">'banana'</span>, [<span class="st">'hello'</span>, <span class="st">'world'</span>]]</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>empty_list <span class="op">=</span> []</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>my_list <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="st">'apple'</span>, <span class="st">'banana'</span>, [<span class="st">'hello'</span>, <span class="st">'world'</span>]]</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>empty_list <span class="op">=</span> []</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 <li><p>In a string, the values are characters; in a list, they can be any type.</p></li>
 <li><p>Unlike strings, <strong>lists are mutable</strong> because you can change the order of items in a list or reassign an item in a list.</p></li>
 <li><p><code>range(n)</code> returns a list of indices from 0 to n-1</p></li>
 <li><p>List operations</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> [<span class="dv">4</span>, <span class="dv">5</span>]</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> a <span class="op">+</span> b <span class="co"># returns [1, 2, 3, 4, 5]</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>d <span class="op">=</span> b <span class="op">*</span> <span class="dv">2</span> <span class="co"># returns [4, 5, 4, 5]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> [<span class="dv">4</span>, <span class="dv">5</span>]</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> a <span class="op">+</span> b <span class="co"># returns [1, 2, 3, 4, 5]</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>d <span class="op">=</span> b <span class="op">*</span> <span class="dv">2</span> <span class="co"># returns [4, 5, 4, 5]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 <li><p><code>a_list.sort()</code> arranges the elements of the list from low to high (NB: a_list has been modified)</p></li>
 <li><p><code>new_list = sorted(a_list)</code> <strong>returns a new list</strong>, where the elements are the same in <code>a_list</code> but in order from low to high</p></li>
 <li><p>Deleting elements</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>a_list <span class="op">=</span> [<span class="st">'a'</span>, <span class="st">'b'</span>, <span class="st">'c'</span>, <span class="st">'d'</span>, <span class="st">'e'</span>, <span class="st">'f'</span>]</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="kw">del</span> a_list[<span class="dv">1</span>:<span class="dv">5</span>] <span class="co"># now a_list becomes ['a', 'f'] --- note the slice operator [1:5]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>a_list <span class="op">=</span> [<span class="st">'a'</span>, <span class="st">'b'</span>, <span class="st">'c'</span>, <span class="st">'d'</span>, <span class="st">'e'</span>, <span class="st">'f'</span>]</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="kw">del</span> a_list[<span class="dv">1</span>:<span class="dv">5</span>] <span class="co"># now a_list becomes ['a', 'f'] --- note the slice operator [1:5]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 <li><p>A string is a sequence of characters and a list is a sequence of values, but a list of characters is not the same as a string. To convert from a string to a list of character, we can do <code>list(a_string)</code></p></li>
 <li><p>The <code>list</code> function breaks a string into <strong>individual letters</strong>. If we want to break a string into words, we use <code>split</code> <strong>method</strong></p></li>
 <li><p><strong>It is important to distinguish between operations that modify lists and operations that create new lists.</strong> For example, <code>append</code> method modifies a list, but the <code>+</code> operator creates a new list.</p></li>
 <li><p>If we want to use a method like <code>sort</code> that modifies the argument, but we need to keep the original list as well, we can make a copy:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>orig <span class="op">=</span> t[:]</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>t.sort()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p>List of tuple <code>python     # Example: list of tuple     a_dic = {'a': 1, 'b': 2, 'c': 3}     my_list = list()     for key, value in list(a_dic.items()) :         my_list.append((value, key))     print(my_list)</code></p></li>
+<div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>orig <span class="op">=</span> t[:]</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>t.sort()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>List of tuple</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example: list of tuple</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>a_dic <span class="op">=</span> {<span class="st">'a'</span>: <span class="dv">1</span>, <span class="st">'b'</span>: <span class="dv">2</span>, <span class="st">'c'</span>: <span class="dv">3</span>}</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>my_list <span class="op">=</span> <span class="bu">list</span>()</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> key, value <span class="kw">in</span> <span class="bu">list</span>(a_dic.items()) :</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    my_list.append((value, key))</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_list)    </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 </ul>
 </section>
 <section id="dictionaries-ch-9" class="level2" data-number="1.9">
 <h2 data-number="1.9" class="anchored" data-anchor-id="dictionaries-ch-9"><span class="header-section-number">1.9</span> Dictionaries (Ch 9)</h2>
 <ul>
-<li>In a dictionary, the indices can be (almost) any type. In a list, the indices must be integers (starting from 0).</li>
-<li>Dictiary: a list of key-value pairs</li>
-<li>Example: <code>python     empty_dic = dict()     eng2spanish = {'one': 'uno', 'two': 'dos', 'three': 'tres'}     pirnt(eng2spanish.keys()) # keys     print(eng2spanish.values()) # values</code></li>
-<li>The order of items in a dictionary is unpredictable.</li>
-<li>The <code>len</code> works on dictionaries.</li>
-<li>The <code>in</code> works on dictionaries; it tells you whether something appears as a <em>key</em> in the dictionary</li>
-<li><code>list(a_dict.values())</code> returns a list, that contains <code>dic_values</code> in it</li>
-<li>using <code>a_dic.get(a_key_value, a_default_value)</code> : if the a_key_value appears in the dictionary then return the corresponding value; otherwise it the returns the default value</li>
-<li><strong>One of the common uses of a dictionary is to count the occurrence of words in a text file.</strong> <code>python     my_counter = dict()     f_handle = open("a_text.text")     for line in f_handle :         line = line.rstrip()         words = line.split()         for w in words :             my_counter[w] = my_counter.get(w, 0) + 1     print(my_counter)</code></li>
-<li><code>line.translate(line.maketrans(fromstr, tostr, deletestr))</code> <code>python     line = line.translate(line.maketrans('', '', string.punctuation)) # remove punctuation     line = line.lower() # lower case     words = line.split() # words</code></li>
+<li><p>In a dictionary, the indices can be (almost) any type. In a list, the indices must be integers (starting from 0).</p></li>
+<li><p>Dictiary: a list of key-value pairs</p></li>
+<li><p>Example:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>empty_dic <span class="op">=</span> <span class="bu">dict</span>()</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>eng2spanish <span class="op">=</span> {<span class="st">'one'</span>: <span class="st">'uno'</span>, <span class="st">'two'</span>: <span class="st">'dos'</span>, <span class="st">'three'</span>: <span class="st">'tres'</span>}</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>pirnt(eng2spanish.keys()) <span class="co"># keys</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(eng2spanish.values()) <span class="co"># values</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>The order of items in a dictionary is unpredictable.</p></li>
+<li><p>The <code>len</code> works on dictionaries.</p></li>
+<li><p>The <code>in</code> works on dictionaries; it tells you whether something appears as a <em>key</em> in the dictionary</p></li>
+<li><p><code>list(a_dict.values())</code> returns a list, that contains <code>dic_values</code> in it</p></li>
+<li><p>using <code>a_dic.get(a_key_value, a_default_value)</code> : if the a_key_value appears in the dictionary then return the corresponding value; otherwise it the returns the default value</p></li>
+<li><p><strong>One of the common uses of a dictionary is to count the occurrence of words in a text file.</strong></p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a> my_counter <span class="op">=</span> <span class="bu">dict</span>()</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a> f_handle <span class="op">=</span> <span class="bu">open</span>(<span class="st">"a_text.text"</span>)</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a> <span class="cf">for</span> line <span class="kw">in</span> f_handle :</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>     line <span class="op">=</span> line.rstrip()</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>     words <span class="op">=</span> line.split()</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>     <span class="cf">for</span> w <span class="kw">in</span> words :</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>         my_counter[w] <span class="op">=</span> my_counter.get(w, <span class="dv">0</span>) <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a> <span class="bu">print</span>(my_counter)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p><code>line.translate(line.maketrans(fromstr, tostr, deletestr))</code></p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>line <span class="op">=</span> line.translate(line.maketrans(<span class="st">''</span>, <span class="st">''</span>, string.punctuation)) <span class="co"># remove punctuation</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>line <span class="op">=</span> line.lower() <span class="co"># lower case</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>words <span class="op">=</span> line.split() <span class="co"># words</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 </ul>
 </section>
 <section id="tuples-ch-10" class="level2" data-number="1.10">
@@ -459,25 +506,49 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>Tuples are <strong>immutable</strong>.</p></li>
 <li><p>Tuples are <strong>comparable</strong> and <strong>hashable</strong> so we can sort lists of them and use tuples as key values in Python dictionaries.</p></li>
 <li><p>A tuple with a singl element: <code>t = ('a', )</code> — there must be a comma!</p></li>
-<li><p>swap values in two variables: <code>python     a = 5     b = 8     print(a, b)     (a, b) = (b, a)     print(a, b)</code></p></li>
+<li><p>swap values in two variables:</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="dv">8</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a, b)</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>(a, b) <span class="op">=</span> (b, a)</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a, b)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 <li><p><code>list(a_dic.items())</code> returns a list of tuples, where the elements are the key-value pairs.</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>a_dic <span class="op">=</span> {<span class="st">'c'</span>: <span class="dv">10</span>, <span class="st">'a'</span>: <span class="dv">20</span>, <span class="st">'b'</span>: <span class="dv">30</span>}</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>L <span class="op">=</span> <span class="bu">list</span>(a_dic.items())</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(L)</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>L.sort()</span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(L)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p>using two variables in <code>for</code> loop <code>python     d = {'a': 10, 'b': 20, 'c': 0}     L = list()     for key, val in d.items() :       L.append((val, key))     L.sort(reverse = True)     print(L)</code></p></li>
-<li><p>using tuples as keys in dictionaries ```python directory = dict() directory[last_name, first_name] = tel_nbr</p>
-<p>for last, first in directory : print(first, last, dirctory[last, first]) ```</p></li>
+<div class="sourceCode" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>a_dic <span class="op">=</span> {<span class="st">'c'</span>: <span class="dv">10</span>, <span class="st">'a'</span>: <span class="dv">20</span>, <span class="st">'b'</span>: <span class="dv">30</span>}</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>L <span class="op">=</span> <span class="bu">list</span>(a_dic.items())</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(L)</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>L.sort()</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(L)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>using two variables in <code>for</code> loop</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>d <span class="op">=</span> {<span class="st">'a'</span>: <span class="dv">10</span>, <span class="st">'b'</span>: <span class="dv">20</span>, <span class="st">'c'</span>: <span class="dv">0</span>}</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>L <span class="op">=</span> <span class="bu">list</span>()</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> key, val <span class="kw">in</span> d.items() :</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>  L.append((val, key))</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>L.sort(reverse <span class="op">=</span> <span class="va">True</span>)</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(L)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>using tuples as keys in dictionaries</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>directory <span class="op">=</span> <span class="bu">dict</span>()</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>directory[last_name, first_name] <span class="op">=</span> tel_nbr</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> last, first <span class="kw">in</span> directory :</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(first, last, dirctory[last, first])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 <li><p>If we are passing a sequence as an argument to a function, using tuples reduces the potential for unexpected behavior due to aliasing.</p></li>
 <li><p>list []; dictionary {}; tuple ()</p></li>
-<li><p>An example: <code>python     d = {'a': 1, 'b': 2, 'c': 3}     list(d.keys()) # a list of characters, ['a', 'b', 'c']     list(d.values()) # a list of numbers, [1, 2, 3]     list(d.items()) # a list of tuples [('a', 1), ('b', 2), ('c', 3)]</code></p></li>
+<li><p>An example:</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>d <span class="op">=</span> {<span class="st">'a'</span>: <span class="dv">1</span>, <span class="st">'b'</span>: <span class="dv">2</span>, <span class="st">'c'</span>: <span class="dv">3</span>}</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="bu">list</span>(d.keys()) <span class="co"># a list of characters, ['a', 'b', 'c']</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="bu">list</span>(d.values()) <span class="co"># a list of numbers, [1, 2, 3]</span></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="bu">list</span>(d.items()) <span class="co"># a list of tuples [('a', 1), ('b', 2), ('c', 3)]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 </ul>
 </section>
 <section id="regular-expressions-ch-11" class="level2" data-number="1.11">
 <h2 data-number="1.11" class="anchored" data-anchor-id="regular-expressions-ch-11"><span class="header-section-number">1.11</span> Regular expressions (Ch 11)</h2>
 <ul>
-<li>Using library/module <code>re</code> <code>python     import re     s = 'ioewr987hjfowijrw;ofisopyuh3we'     if re.search('[0-9]', s) :       print("a number found")     re.findall("([0-9]+)", s) # return a list</code></li>
+<li><p>Using library/module <code>re</code></p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>s <span class="op">=</span> <span class="st">'ioewr987hjfowijrw;ofisopyuh3we'</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> re.search(<span class="st">'[0-9]'</span>, s) :</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">"a number found"</span>)</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>re.findall(<span class="st">"([0-9]+)"</span>, s) <span class="co"># return a list</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 </ul>
 </section>
 <section id="network-programming-ch-12-13-mostly-skipped" class="level2" data-number="1.12">
