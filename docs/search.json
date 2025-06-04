@@ -466,7 +466,7 @@
     "href": "numerical_computing.html#the-first-fibonacci-number-greater-than-m",
     "title": "6  Numerical Computing and Simulation",
     "section": "6.2 The first Fibonacci number greater than m",
-    "text": "6.2 The first Fibonacci number greater than m\nProblem: Let F_n be the n-th Fibonacci number. Find n, such that F_n &gt;= m, where m &gt;= 1.\n\ndef find_fibo_index(m) :\n    f1 = 1\n    f2 = 1\n    i = 2\n    if m == 1 :\n        return 1\n    else:\n        while True:\n            f = f1 + f2\n            i = i + 1\n            if f &gt; m :\n                break\n            f1 = f2\n            f2 = f\n        return i\n\n## test\nprint(find_fibo_index(10000))\nprint(find_fibo_index(1))\n\n21\n1",
+    "text": "6.2 The first Fibonacci number greater than m\nProblem: Let F_n be the n-th Fibonacci number. Find n, such that F_n &gt;= m, where m &gt;= 1.\n\ndef find_fibo_index(m) :\n    f1 = 1\n    f2 = 1\n    i = 2\n    if m == 1 :\n        return 1\n    else:\n        while True:\n            f = f1 + f2\n            i = i + 1\n            if f &gt;= m :\n                break\n            f1 = f2\n            f2 = f\n        return i\n\n## test\nprint(find_fibo_index(10000))\nprint(find_fibo_index(1))\nprint(find_fibo_index(2))\n\n21\n1\n3",
     "crumbs": [
       "Part II Examples",
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Numerical Computing and Simulation</span>"
@@ -521,7 +521,7 @@
     "href": "numerical_computing.html#birthday-problem",
     "title": "6  Numerical Computing and Simulation",
     "section": "6.7 Birthday problem",
-    "text": "6.7 Birthday problem\n\n# Problem: Find the the answer to the birthday problem (https://en.wikipedia.org/wiki/Birthday_problem) by simulation.\nimport numpy as np\n\ndef simu_birthday_problem(N = 10000, people_number = 23):\n    indicator = [0] * N\n    a = np.arange(365) # array([0, 1, ..., 364])\n    for i in range(N):\n        a_sample = np.random.choice(a, size = people_number, replace = True)\n        b = set(a_sample)\n        if len(a_sample) &gt; len(b):\n            indicator[i] = 1\n    the_result = sum(indicator) / N\n    return the_result # accuracy: +- 0.01 with 95% confidence\n\n## test\nfor i in range(5) :\n    print(simu_birthday_problem(10000, 23))\n\n0.501\n0.5021\n0.5116\n0.5062\n0.5152",
+    "text": "6.7 Birthday problem\n\n# Problem: Find the the answer to the birthday problem (https://en.wikipedia.org/wiki/Birthday_problem) by simulation.\nimport numpy as np\n\ndef simu_birthday_problem(N = 10000, people_number = 23):\n    indicator = [0] * N\n    a = np.arange(365) # array([0, 1, ..., 364])\n    for i in range(N):\n        a_sample = np.random.choice(a, size = people_number, replace = True)\n        b = set(a_sample)\n        if len(a_sample) &gt; len(b):\n            indicator[i] = 1\n    the_result = sum(indicator) / N\n    return the_result # accuracy: +- 0.01 with 95% confidence\n\n## test\nfor i in range(5) :\n    print(simu_birthday_problem(10000, 23))\n\n0.5093\n0.5062\n0.5109\n0.5071\n0.5066",
     "crumbs": [
       "Part II Examples",
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Numerical Computing and Simulation</span>"
